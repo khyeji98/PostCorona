@@ -1,7 +1,7 @@
 # PreventionOfCorona
 포스트코로나 공모전 프로젝트
 
-## 서버
+## 서버 및 데이터베이스
 ### Firebase
 - Auth
 ```Swift
