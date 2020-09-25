@@ -40,10 +40,6 @@ let collectionRef = db.collection("checkList")
     } else {
       if let querySnapshot = querySnapshot {
         self.checkListArray = querySnapshot[category] as? [String] ?? [""]
-                    
-        DispatchQueue.main.async {
-          self.checkListTableView.reloadData()
-        }
       }
     }
   }
