@@ -63,3 +63,4 @@ let collectionRef = db.collection("checkList")
 ## Solutions
 ### tableview cell button을 눌르고 스크롤했을 때 reusablecell이기 때문에 아래 cell button도 선택되어 있음
 
+참고 : https://iostutorialjunction.com/2018/02/add-custom-checkbox-on-uitableviewcell.html
