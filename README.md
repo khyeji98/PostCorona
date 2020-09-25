@@ -28,6 +28,27 @@ guard let userEmail = Auth.auth().currenUser?.email else { return } // 사용자
 ```
 - Cloud Firestore
 ```Swift
+let db = Firestore.firestore()
+
+// Collection-Document-Field 가져오는데 category name으로 되어있는 array가져오기
+let collectionRef = db.collection("checkList")
+  guard let category = self.category else { return }
+        
+  collectionRef.document("store").getDocument() { (querySnapshot, error) in
+    if let error = error {
+      print("에러남: \(error.localizedDescription)")
+    } else {
+      if let querySnapshot = querySnapshot {
+        self.checkListArray = querySnapshot[category] as? [String] ?? [""]
+                    
+        DispatchQueue.main.async {
+          self.checkListTableView.reloadData()
+        }
+      }
+    }
+  }
+}
+//
 
 ```
 - Storage
