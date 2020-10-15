@@ -12,7 +12,6 @@ import SDWebImage
 
 class MyPageViewController: UIViewController {
     
-    @IBOutlet weak var firstStoreImageView: UIImageView!
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var firstStoreNameLabel: UILabel!
     @IBOutlet weak var goToLogInButton: UIButton!
@@ -66,18 +65,6 @@ class MyPageViewController: UIViewController {
                             self.userStoreArray = querySnapshot.documents.compactMap({Store(dictionary: $0.data())})
                             self.firstStoreNameLabel.text = "대표 업장 : \(self.userStoreArray[0].storeName)"
                             
-                            Storage.storage().reference(forURL: "gs://together-at001.appspot.com/\(self.userStoreArray[0].storeNum).png").downloadURL(completion: { (url, error) in
-                                if let error = error {
-                                    print(error.localizedDescription)
-                                } else {
-                                    if let url = url {
-                                        self.firstStoreImageView.layer.cornerRadius = self.firstStoreImageView.frame.height/2
-                                        self.firstStoreImageView.layer.borderWidth = 1
-                                        self.firstStoreImageView.layer.borderColor = UIColor.veryLightPink.cgColor
-                                        self.firstStoreImageView.sd_setImage(with: url)
-                                    }
-                                }
-                            })
                         } else {
                             self.firstStoreNameLabel.text = "등록된 업장이 없습니다."
                         }
@@ -85,7 +72,6 @@ class MyPageViewController: UIViewController {
                 }
             
         } else {
-            firstStoreImageView.image = UIImage(named: "mypageDefault.png")
             userEmailLabel.isHidden = true
             firstStoreNameLabel.isHidden = true
             goToLogInButton.isHidden = false

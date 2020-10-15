@@ -317,7 +317,7 @@ extension SurroundingStoreListViewController: UITableViewDataSource, CLLocationM
     }
      
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "surroundingStoreCell", for: indexPath) as! StoreListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "surroundingStoreCell", for: indexPath) as! GuStoreListTableViewCell
         let store = storeArray[indexPath.row]
         
         if let latitude = self.latitude, let longitude = self.longitude {

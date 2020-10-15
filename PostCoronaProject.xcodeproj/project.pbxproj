@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		0783ED52E64AD7A91B539CA0 /* Pods_PostCoronaProject_PostCoronaProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E2C05131B54EDA3770CAA1 /* Pods_PostCoronaProject_PostCoronaProjectUITests.framework */; };
 		330C5B1F24F28A20001B0F3E /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C5B1E24F28A20001B0F3E /* UIExtension.swift */; };
-		3331258224DDD0DC00B36E8A /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */; };
+		333CCBF62531A31000DB15A6 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 333CCBF52531A31000DB15A6 /* NotoSansKR-Light.otf */; };
+		333CCBFF2531A4B100DB15A6 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CCBFD2531A4B100DB15A6 /* StoreListTableViewCell.swift */; };
+		333CCC002531A4B100DB15A6 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333CCBFE2531A4B100DB15A6 /* StoreListTableViewCell.xib */; };
 		335F225F2501DFA700DF1482 /* MyStoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */; };
 		335F226125023B4800DF1482 /* EditStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F226025023B4800DF1482 /* EditStoreViewController.swift */; };
 		3360056F24F80D3000217DB0 /* TodayCheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */; };
 		3360057124F8123D00217DB0 /* TodayCheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360057024F8123D00217DB0 /* TodayCheckListTableViewCell.swift */; };
-		33602B7824F3A30300605A48 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 33602B7724F3A30200605A48 /* NotoSansKR-Light.otf */; };
 		337E9C3124E1E35100475C48 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3024E1E35100475C48 /* SF-Pro.ttf */; };
 		337E9C3324E1E38F00475C48 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3224E1E38F00475C48 /* NotoSansKR-Bold.otf */; };
 		337E9C3524E1E39700475C48 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3424E1E39700475C48 /* NotoSansKR-Medium.otf */; };
@@ -76,12 +77,13 @@
 		069F3309BEFD8E3C37C353BF /* Pods-PostCoronaProject-PostCoronaProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostCoronaProject-PostCoronaProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0EDC59FF236E9D801180B580 /* Pods_PostCoronaProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PostCoronaProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		330C5B1E24F28A20001B0F3E /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
-		3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
+		333CCBF52531A31000DB15A6 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		333CCBFD2531A4B100DB15A6 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
+		333CCBFE2531A4B100DB15A6 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
 		335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoreListTableViewCell.swift; sourceTree = "<group>"; };
 		335F226025023B4800DF1482 /* EditStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStoreViewController.swift; sourceTree = "<group>"; };
 		3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckListViewController.swift; sourceTree = "<group>"; };
 		3360057024F8123D00217DB0 /* TodayCheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckListTableViewCell.swift; sourceTree = "<group>"; };
-		33602B7724F3A30200605A48 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../../Library/Fonts/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		337E9C3024E1E35100475C48 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		337E9C3224E1E38F00475C48 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		337E9C3424E1E39700475C48 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
@@ -178,7 +180,7 @@
 				337E9C3224E1E38F00475C48 /* NotoSansKR-Bold.otf */,
 				337E9C3424E1E39700475C48 /* NotoSansKR-Medium.otf */,
 				337E9C3624E1E3BA00475C48 /* NotoSansKR-Regular.otf */,
-				33602B7724F3A30200605A48 /* NotoSansKR-Light.otf */,
+				333CCBF52531A31000DB15A6 /* NotoSansKR-Light.otf */,
 				337E9C3024E1E35100475C48 /* SF-Pro.ttf */,
 			);
 			path = shared;
@@ -275,7 +277,8 @@
 			children = (
 				337E9C4124E2367D00475C48 /* Model */,
 				337E9C4024E2366C00475C48 /* View */,
-				3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */,
+				333CCBFD2531A4B100DB15A6 /* StoreListTableViewCell.swift */,
+				333CCBFE2531A4B100DB15A6 /* StoreListTableViewCell.xib */,
 				33A96EDC24D42F2700F7FCC9 /* StoreListViewController.swift */,
 				33A1D44524DD5D59006E62C4 /* SurroundingStoreListViewController.swift */,
 				337E9C3A24E2205D00475C48 /* StoreInfoViewController.swift */,
@@ -456,11 +459,12 @@
 				33A96EE224D42F2800F7FCC9 /* Assets.xcassets in Resources */,
 				337E9C3924E1E70700475C48 /* AppleSDGothicNeo.ttc in Resources */,
 				33A96EE024D42F2700F7FCC9 /* Main.storyboard in Resources */,
-				33602B7824F3A30300605A48 /* NotoSansKR-Light.otf in Resources */,
+				333CCBF62531A31000DB15A6 /* NotoSansKR-Light.otf in Resources */,
 				337E9C3324E1E38F00475C48 /* NotoSansKR-Bold.otf in Resources */,
 				337E9C3724E1E3BA00475C48 /* NotoSansKR-Regular.otf in Resources */,
 				337E9C3124E1E35100475C48 /* SF-Pro.ttf in Resources */,
 				337E9C3D24E235E600475C48 /* CustomCategoryView.xib in Resources */,
+				333CCC002531A4B100DB15A6 /* StoreListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,9 +608,9 @@
 				335F225F2501DFA700DF1482 /* MyStoreListTableViewCell.swift in Sources */,
 				33EBC2FE24D7F87A0089EF45 /* QRcodeViewController.swift in Sources */,
 				337E9C3F24E2366800475C48 /* CustomCategoryView.swift in Sources */,
-				3331258224DDD0DC00B36E8A /* StoreListTableViewCell.swift in Sources */,
 				33B4E18124F4B630003D0497 /* AdminStoreViewController .swift in Sources */,
 				3360056F24F80D3000217DB0 /* TodayCheckListViewController.swift in Sources */,
+				333CCBFF2531A4B100DB15A6 /* StoreListTableViewCell.swift in Sources */,
 				33BAFFBC24F1A38C000F7F37 /* AddStoreViewController.swift in Sources */,
 				3360057124F8123D00217DB0 /* TodayCheckListTableViewCell.swift in Sources */,
 				33A96EDB24D42F2700F7FCC9 /* SceneDelegate.swift in Sources */,
