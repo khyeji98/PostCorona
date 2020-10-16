@@ -14,8 +14,7 @@ protocol DocumentSerializable {
 
 struct Store {
     var storeName: String
-    var roadAdd1: String
-    var roadAdd2: String
+    var add: String
     var add1: String
     var add2: String
     var add3: String
@@ -32,8 +31,7 @@ struct Store {
     var dictionary: [String: Any] {
         return [
             "storeName": storeName,
-            "roadAdd1": roadAdd1,
-            "roadAdd2": roadAdd2,
+            "add": add,
             "add1": add1,
             "add2": add2,
             "add3": add3,
@@ -53,8 +51,7 @@ struct Store {
 extension Store: DocumentSerializable {
     init?(dictionary: [String : Any]) {
         guard let storeName = dictionary["storeName"] as? String,
-            let roadAdd1 = dictionary["roadAdd1"] as? String,
-            let roadAdd2 = dictionary["roadAdd2"] as? String,
+            let add = dictionary["add"] as? String,
             let add1 = dictionary["add1"] as? String,
             let add2 = dictionary["add2"] as? String,
             let add3 = dictionary["add3"] as? String,
@@ -69,6 +66,6 @@ extension Store: DocumentSerializable {
             let y = dictionary["y"] as? String else {
                 return nil
         }
-        self.init(storeName: storeName, roadAdd1: roadAdd1, roadAdd2: roadAdd2, add1: add1, add2: add2, add3: add3, email: email, category: category, phone1: phone1, phone2: phone2, storeNum: storeNum, url: url, relief: relief, x: x, y: y)
+        self.init(storeName: storeName, add: add, add1: add1, add2: add2, add3: add3, email: email, category: category, phone1: phone1, phone2: phone2, storeNum: storeNum, url: url, relief: relief, x: x, y: y)
     }
 }

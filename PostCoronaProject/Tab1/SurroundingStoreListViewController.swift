@@ -10,7 +10,6 @@ import UIKit
 import FFPopup
 import Firebase
 import SDWebImage
-import CoreLocation
 import XLPagerTabStrip
 
 class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider {
@@ -25,46 +24,16 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
     var imageURLArray = [String]()
     
     //MARK: Properties/FFPopup
-    var categoryView = CustomCategoryView()
+    var categoryView: CustomCategoryView?
     var popup : FFPopup?
     var buttonTag: Int = 0
     
-    var locationManager: CLLocationManager!
-    var latitude: Double?
-    var longitude: Double?
-    
     //MARK: - Methods
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.surroudingStoreListTableView.delegate = self
-        self.surroudingStoreListTableView.dataSource = self
-        
-        filterButton.layer.cornerRadius = 4
-        filterButton.layer.borderWidth = 1
-        filterButton.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
-        
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        
-        let coor = locationManager.location?.coordinate
-        latitude = coor?.latitude
-        longitude = coor?.longitude
-        
-        loadData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-        self.storeArray.removeAll()
-        self.imageURLArray.removeAll()
+        self.surroudingStoreListTableView.delegate = self
+        self.surroudingStoreListTableView.dataSource = self
+        loadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,9 +41,10 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
     }
     
     @IBAction func tappedFilterButton(_ sender: UIButton) {
+        categoryView = CustomCategoryView()
+        categoryView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 249)
         
-        categoryView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 249)
-        popup = FFPopup(contentView: categoryView)
+        popup = FFPopup(contentView: categoryView!)
         
         popup?.showType = .slideInFromTop
         popup?.maskType = .dimmed
@@ -84,14 +54,14 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
         popup?.shouldDismissOnBackgroundTouch = true
         popup?.shouldDismissOnContentTouch = false
         
-        categoryView.totalButton.addTarget(self, action: #selector(selectTotal), for: .touchUpInside)
-        categoryView.foodButton.addTarget(self, action: #selector(selectFood), for: .touchUpInside)
-        categoryView.cafeButton.addTarget(self, action: #selector(selectCafe), for: .touchUpInside)
-        categoryView.barButton.addTarget(self, action: #selector(selectPub), for: .touchUpInside)
-        categoryView.pcButton.addTarget(self, action: #selector(selectPc), for: .touchUpInside)
-        categoryView.singButton.addTarget(self, action: #selector(selectSing), for: .touchUpInside)
-        categoryView.cancelButton.addTarget(self, action: #selector(tappedCancelButton), for: .touchUpInside)
-        categoryView.okButton.addTarget(self, action: #selector(tappedOkButton), for: .touchUpInside)
+        categoryView?.totalButton.addTarget(self, action: #selector(selectTotal), for: .touchUpInside)
+        categoryView?.foodButton.addTarget(self, action: #selector(selectFood), for: .touchUpInside)
+        categoryView?.cafeButton.addTarget(self, action: #selector(selectCafe), for: .touchUpInside)
+        categoryView?.pubButton.addTarget(self, action: #selector(selectPub), for: .touchUpInside)
+        categoryView?.pcButton.addTarget(self, action: #selector(selectPc), for: .touchUpInside)
+        categoryView?.singButton.addTarget(self, action: #selector(selectSing), for: .touchUpInside)
+        categoryView?.cancelButton.addTarget(self, action: #selector(tappedCancelButton), for: .touchUpInside)
+        categoryView?.okButton.addTarget(self, action: #selector(tappedOkButton), for: .touchUpInside)
         
         let layout = FFpopupLayout(horizontal: .center, vertical: .top)
         popup?.show(layout: layout)
@@ -103,31 +73,23 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
     }
     
     @objc func selectTotal() {
-//        categoryView = CustomCategoryView()
-//        categoryView?.totalButton.isSelected = !(categoryView?.totalButton.isSelected)!
-//        if categoryView?.totalButton.isSelected == true {
-//            categoryView?.totalButton.setTitleColor(.clearBlue, for: .normal)
-//            categoryView?.cafeButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.pubButton.isSelected = false
-//            categoryView?.pcButton.isSelected = false
-//            categoryView?.singButton.isSelected = false
-//        }
-
-        categoryView.totalButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView.foodButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.cafeButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.barButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.pcButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.singButton.setTitleColor(.lightBrownGrey, for: .normal)
-        
+        categoryView = CustomCategoryView()
+        categoryView?.totalButton.isSelected = !(categoryView?.totalButton.isSelected)!
+        if categoryView?.totalButton.isSelected == true {
+            categoryView?.totalButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView?.cafeButton.isSelected = false
+            categoryView?.foodButton.isSelected = false
+            categoryView?.pubButton.isSelected = false
+            categoryView?.pcButton.isSelected = false
+            categoryView?.singButton.isSelected = false
+        }
         storeArray.removeAll()
         print("total is selected")
-        loadTotalData()
+        loadData()
     }
     
     @objc func selectFood() {
-//        categoryView = CustomCategoryView()
+        categoryView = CustomCategoryView()
 //        categoryView?.foodButton.isSelected = !(categoryView?.foodButton.isSelected)!
 //        if categoryView?.foodButton.isSelected == true {
 //            categoryView?.foodButton.setTitleColor(.clearBlue, for: .normal)
@@ -137,121 +99,89 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
 //            categoryView?.pcButton.isSelected = false
 //            categoryView?.singButton.isSelected = false
 //        }
-        categoryView.totalButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.foodButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView.cafeButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.barButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.pcButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.singButton.setTitleColor(.lightBrownGrey, for: .normal)
         
         storeArray.removeAll()
         print("food is selected")
-        loadFilteredData("food")
+        loadFilteredData("음식점")
     }
     
     @objc func selectCafe() {
-//        categoryView = CustomCategoryView()
-//        categoryView?.cafeButton.isSelected = !(categoryView?.cafeButton.isSelected)!
-//        if categoryView?.cafeButton.isSelected == true {
-//            categoryView?.totalButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.pubButton.isSelected = false
-//            categoryView?.pcButton.isSelected = false
-//            categoryView?.singButton.isSelected = false
-//        }
-        categoryView.totalButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.foodButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.cafeButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView.barButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.pcButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.singButton.setTitleColor(.lightBrownGrey, for: .normal)
-        
+        categoryView = CustomCategoryView()
+        categoryView?.cafeButton.isSelected = !(categoryView?.cafeButton.isSelected)!
+        if categoryView?.cafeButton.isSelected == true {
+            categoryView?.totalButton.isSelected = false
+            categoryView?.foodButton.isSelected = false
+            categoryView?.pubButton.isSelected = false
+            categoryView?.pcButton.isSelected = false
+            categoryView?.singButton.isSelected = false
+        }
+        if categoryView?.cafeButton.titleColor(for: .normal) == UIColor.clearBlue {
+            categoryView?.cafeButton.setTitleColor(.lightBrownGrey, for: .normal)
+        } else if categoryView?.cafeButton.titleColor(for: .normal) == UIColor.lightBrownGrey {
+            categoryView?.cafeButton.setTitleColor(.clearBlue, for: .normal)
+        }
         storeArray.removeAll()
         print("cafe is selected")
-        loadFilteredData("cafe")
+        loadFilteredData("카페")
     }
     
     @objc func selectPub() {
-//        categoryView = CustomCategoryView()
-//        categoryView?.pubButton.setTitleColor(.clearBlue, for: .normal)
-//        categoryView?.pubButton.isSelected = !(categoryView?.pubButton.isSelected)!
-//        if categoryView?.pubButton.isSelected == true {
-//
-//            categoryView?.totalButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.cafeButton.isSelected = false
-//            categoryView?.pcButton.isSelected = false
-//            categoryView?.singButton.isSelected = false
-//        }
-        categoryView.totalButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.foodButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.cafeButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.barButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView.pcButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.singButton.setTitleColor(.lightBrownGrey, for: .normal)
-        
+        categoryView = CustomCategoryView()
+        categoryView?.pubButton.setTitleColor(.clearBlue, for: .normal)
+        categoryView?.pubButton.isSelected = !(categoryView?.pubButton.isSelected)!
+        if categoryView?.pubButton.isSelected == true {
+            
+            categoryView?.totalButton.isSelected = false
+            categoryView?.foodButton.isSelected = false
+            categoryView?.cafeButton.isSelected = false
+            categoryView?.pcButton.isSelected = false
+            categoryView?.singButton.isSelected = false
+        }
         storeArray.removeAll()
         print("pub is selected")
-        loadFilteredData("bar")
+        loadFilteredData("주점")
     }
     
     @objc func selectPc() {
-//        categoryView = CustomCategoryView()
-//        categoryView?.pcButton.setTitleColor(.clearBlue, for: .selected)
-//        if categoryView?.pcButton.isSelected == true {
-//
-//            categoryView?.totalButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.cafeButton.isSelected = false
-//            categoryView?.pubButton.isSelected = false
-//            categoryView?.singButton.isSelected = false
-//        }
-//        categoryView?.pcButton.isSelected = !(categoryView?.pcButton.isSelected)!
-        categoryView.totalButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.foodButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.cafeButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.barButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.pcButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView.singButton.setTitleColor(.lightBrownGrey, for: .normal)
-        
+        categoryView = CustomCategoryView()
+        categoryView?.pcButton.setTitleColor(.clearBlue, for: .selected)
+        if categoryView?.pcButton.isSelected == true {
+            
+            categoryView?.totalButton.isSelected = false
+            categoryView?.foodButton.isSelected = false
+            categoryView?.cafeButton.isSelected = false
+            categoryView?.pubButton.isSelected = false
+            categoryView?.singButton.isSelected = false
+        }
+        categoryView?.pcButton.isSelected = !(categoryView?.pcButton.isSelected)!
         storeArray.removeAll()
         print("pc is selected")
-        loadFilteredData("pc")
+        loadFilteredData("피시방")
     }
     
     @objc func selectSing() {
-//        categoryView = CustomCategoryView()
-//        categoryView?.singButton.setTitleColor(.clearBlue, for: .selected)
-//        if categoryView?.singButton.isSelected == true {
-//
-//            categoryView?.totalButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.cafeButton.isSelected = false
-//            categoryView?.pubButton.isSelected = false
-//            categoryView?.pcButton.isSelected = false
-//        }
-//        categoryView?.singButton.isSelected = !(categoryView?.singButton.isSelected)!
-        categoryView.totalButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.foodButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.cafeButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.barButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.pcButton.setTitleColor(.lightBrownGrey, for: .normal)
-        categoryView.singButton.setTitleColor(.clearBlue, for: .normal)
-        
+        categoryView = CustomCategoryView()
+        categoryView?.singButton.setTitleColor(.clearBlue, for: .selected)
+        if categoryView?.singButton.isSelected == true {
+            
+            categoryView?.totalButton.isSelected = false
+            categoryView?.foodButton.isSelected = false
+            categoryView?.cafeButton.isSelected = false
+            categoryView?.pubButton.isSelected = false
+            categoryView?.pcButton.isSelected = false
+        }
+        categoryView?.singButton.isSelected = !(categoryView?.singButton.isSelected)!
         storeArray.removeAll()
         print("sing is selected")
-        loadFilteredData("karaoke")
+        loadFilteredData("노래방")
     }
     
     @objc func tappedOkButton() {
         DispatchQueue.main.async {
             self.surroudingStoreListTableView.reloadData()
         }
-        // 노래방 alert
         popup?.dismissType = .slideOutToTop.self
         popup?.dismiss(animated: true)
-        
-        
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -259,118 +189,67 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
     }
     
     func loadData() {
+        storeArray.removeAll()
         self.surroudingStoreListTableView.delegate = self
         self.surroudingStoreListTableView.dataSource = self
         
         let collectionRef = db.collection("storeList")
         
-        collectionRef.addSnapshotListener() { (querySnapshot, error) in
-            guard let querySnapshot = querySnapshot else {
-                print(error!.localizedDescription)
-                return
-            }
-            self.storeArray = querySnapshot.documents.compactMap({Store(dictionary: $0.data())})
-            DispatchQueue.main.async {
-                self.surroudingStoreListTableView.reloadData()
-            }
-        }
-    }
-    
-    func loadTotalData() {
-        self.surroudingStoreListTableView.delegate = self
-        self.surroudingStoreListTableView.dataSource = self
-        
-        let collectionRef = db.collection("storeList")
-        
-        collectionRef.addSnapshotListener() { (querySnapshot, error) in
+        collectionRef.getDocuments() { (querySnapshot, error) in
             if let error = error {
                 print(error.localizedDescription)
             }else {
-                guard let querySnapshot = querySnapshot else { return }
-                self.storeArray = querySnapshot.documents.compactMap({Store(dictionary: $0.data())})
+                self.storeArray = querySnapshot!.documents.compactMap({Store(dictionary: $0.data())})
+                DispatchQueue.main.async {
+                    self.surroudingStoreListTableView.reloadData()
+                }
             }
         }
     }
     
     func loadFilteredData(_ sender: String) {
+        storeArray.removeAll()
         self.surroudingStoreListTableView.delegate = self
         self.surroudingStoreListTableView.dataSource = self
         
         let collectionRef = db.collection("storeList")
         
-        collectionRef.whereField("category", isEqualTo: String(sender)).addSnapshotListener() { (querySnapshot, error) in
+        collectionRef.whereField("category", isEqualTo: String(sender)).getDocuments() { (querySnapshot, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                guard let querySnapshot = querySnapshot else { return }
-                self.storeArray = querySnapshot.documents.compactMap({Store(dictionary: $0.data())})
+                self.storeArray = querySnapshot!.documents.compactMap({Store(dictionary: $0.data())})
+//                DispatchQueue.main.async {
+//                    self.surroudingStoreListTableView.reloadData()
+//                }
             }
         }
     }
 }
 
 //MARK: -tableViewExtensions
-extension SurroundingStoreListViewController: UITableViewDataSource, CLLocationManagerDelegate {
+extension SurroundingStoreListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return storeArray.count
     }
      
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "surroundingStoreCell", for: indexPath) as! StoreListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "surroundingStoreCell", for: indexPath) as! SurroundingStoreListTableViewCell
         let store = storeArray[indexPath.row]
         
-        if let latitude = self.latitude, let longitude = self.longitude {
-            let userCoor = CLLocation(latitude: latitude, longitude: longitude)
-            let storeCoor = CLLocation(latitude: Double(store.y)!, longitude: Double(store.x)!)
-            
-            cell.distanceLabel.text = "\(String(floor(userCoor.distance(from: storeCoor))))m"
-        } else {
-            cell.distanceLabel.text = "..m"
-        }
-        
         cell.storeNameLabel.text = store.storeName
-        
         cell.storeAddressLabel.text = "\(store.add1) \(store.add2) \(store.add3)"
         cell.safeCountingLabel.text = "안심 스티커 \(store.relief)개"
+        cell.email = store.email
         
-//        cell.checkListImageView.image = UIImage(named: "cleanCheck.png")
         cell.storeImageView.image = UIImage(named: "default.png")
         
-        DispatchQueue.main.async {
-            self.db.collection("checkList\(store.category.capitalized)").document(store.storeNum).addSnapshotListener() { (querySnapshot, error) in
-                if let querySnapshot = querySnapshot, querySnapshot.exists {
-                    if let date = querySnapshot.data()?["date"] as? Timestamp {
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "yyyy-MM-dd"
-                        // firestore date
-                        let timeInterval = TimeInterval(integerLiteral: date.seconds)
-                        let time = Date(timeIntervalSince1970: timeInterval)
-                        let timeString = dateFormatter.string(from: time)
-                        // today
-                        let todayString = dateFormatter.string(from: Date())
-                        
-                        if todayString == timeString {
-                            cell.checkListImageView.image = UIImage(named: "cleanCheckActive.png")
-                        } else {
-                            cell.checkListImageView.image = UIImage(named: "cleanCheck.png")
-                        }
-                    }
-                } else {
-                    cell.checkListImageView.image = UIImage(named: "cleanCheck.png")
-                }
+        _ = Storage.storage().reference(forURL: "gs://together-at001.appspot.com/\(store.storeName).png").downloadURL(completion: { (url, error) in
+            if let url = url {
+                cell.storeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "default.png"))
             }
-            
-            Storage.storage().reference(forURL: "gs://together-at001.appspot.com/\(store.storeNum).png").downloadURL(completion: { (url, error) in
-                if let url = url {
-                    cell.storeImageView.sd_setImage(with: url)
-                }
-            })
-        }
-        
-        cell.storeImageView.layer.cornerRadius = 19
-        cell.storeImageView.layer.borderWidth = 0.8
-        cell.storeImageView.layer.borderColor = UIColor.veryLightPink.cgColor
+        })
         
         cell.storeNameLabel.font = UIFont.NotoSansKR(type: .medium, size: 16)
         cell.distanceLabel.font = UIFont.SFPro(type: .medium, size: 14)
@@ -381,8 +260,6 @@ extension SurroundingStoreListViewController: UITableViewDataSource, CLLocationM
         cell.distanceLabel.textColor = UIColor.brownGrey
         cell.storeAddressLabel.textColor = UIColor.brownGrey
         cell.safeCountingLabel.textColor = UIColor.clearBlue
-        
-        cell.selectionStyle = .none
         
         return cell
     }
@@ -395,24 +272,12 @@ extension SurroundingStoreListViewController: UITableViewDelegate {
         let selected = storeArray[indexPath.row]
         
         if let storeInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "storeInfo") as? StoreInfoViewController {
-            storeInfoVC.store = selected
-            // push from presented vc
-            let rootVC = UINavigationController(rootViewController: storeInfoVC)
-            rootVC.isNavigationBarHidden = true
             
-            rootVC.modalPresentationStyle = .fullScreen
-            self.present(rootVC, animated: true, completion: nil)
+            storeInfoVC.store = selected
+
+            storeInfoVC.modalPresentationStyle = .fullScreen
+            self.present(storeInfoVC, animated: true, completion: nil)
         }
     }
 }
-
-//extension SurroundingStoreListViewController: CLLocationManagerDelegate {
-//
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//
-//
-//        let locValue: CLLocationCoordinate2D = manager.location!.coordinate
-//
-//    }
-//}
 

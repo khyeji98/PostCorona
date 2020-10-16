@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoreListTableViewCell: UITableViewCell {
+class SurroundingStoreListTableViewCell: UITableViewCell {
 
     // 둥근 이미지들 선택했을 때에도 이미지 모양대로 설정해주기
     @IBOutlet weak var storeImageView: UIImageView!
@@ -17,6 +17,8 @@ class StoreListTableViewCell: UITableViewCell {
     @IBOutlet weak var storeAddressLabel: UILabel!
     @IBOutlet weak var safeCountingLabel: UILabel!
     @IBOutlet weak var checkListImageView: UIImageView!
+    
+    var email: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()

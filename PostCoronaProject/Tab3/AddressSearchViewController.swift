@@ -17,11 +17,8 @@ protocol ResultCellDelegate {
 class AddressSearchViewController: UIViewController, ResultCellDelegate {
     
     var delegate: AddressSearchDelegate?
-    private var resultList = [Address]()
-    
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var resultTableView: UITableView!
-    
     @IBAction func tappedSearchButton(_ sender: UIButton) {
         self.doSearchAddress(keyword: addressTextField.text ?? "", page: 1)
     }
@@ -36,24 +33,18 @@ class AddressSearchViewController: UIViewController, ResultCellDelegate {
             cell.cellDelegate?.didSelectAddress(sender)
         }
     }
+
+    private var resultList = [Address]()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.resultList.removeAll()
         
         resultTableView.delegate = self
         resultTableView.dataSource = self
         
         resultTableView.separatorInset = .zero
         resultTableView.separatorStyle = .none
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-        self.resultList.removeAll()
     }
     
     override func didReceiveMemoryWarning() {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,12 +14,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCategoryView" customModule="PostCoronaProject" customModuleProvider="target">
             <connections>
-                <outlet property="barButton" destination="ABv-g5-6CT" id="QUl-V4-xfo"/>
                 <outlet property="cafeButton" destination="zYu-S7-6Lg" id="hpe-jm-yFV"/>
                 <outlet property="cancelButton" destination="NLY-2z-7TQ" id="nrs-cd-54y"/>
                 <outlet property="foodButton" destination="BoC-Qj-tjB" id="oWs-bF-O9W"/>
                 <outlet property="okButton" destination="XSB-EA-9pB" id="dHd-tu-Ol3"/>
                 <outlet property="pcButton" destination="oJF-JS-BPR" id="xn7-3a-Doe"/>
+                <outlet property="pubButton" destination="ABv-g5-6CT" id="QUl-V4-xfo"/>
                 <outlet property="singButton" destination="59a-aT-ldb" id="slP-kP-0c6"/>
                 <outlet property="totalButton" destination="6LH-Ma-Na5" id="8GN-dJ-0f0"/>
             </connections>
@@ -30,11 +30,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLY-2z-7TQ">
-                    <rect key="frame" x="26" y="12" width="27" height="30"/>
+                    <rect key="frame" x="26" y="56" width="27" height="30"/>
                     <state key="normal" image="icExitActive"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LH-Ma-Na5">
-                    <rect key="frame" x="35" y="71" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LH-Ma-Na5">
+                    <rect key="frame" x="35" y="115" width="30" height="35"/>
                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="전체">
@@ -44,8 +44,8 @@
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYu-S7-6Lg">
-                    <rect key="frame" x="35" y="105" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYu-S7-6Lg">
+                    <rect key="frame" x="35" y="154" width="30" height="35"/>
                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="카페">
@@ -55,8 +55,8 @@
                         <color key="titleColor" red="0.20392156859999999" green="0.42745098040000001" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoC-Qj-tjB">
-                    <rect key="frame" x="238" y="71" width="39" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoC-Qj-tjB">
+                    <rect key="frame" x="238" y="115" width="42" height="35"/>
                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="음식점">
@@ -66,24 +66,24 @@
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABv-g5-6CT">
-                    <rect key="frame" x="238" y="105" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABv-g5-6CT">
+                    <rect key="frame" x="238" y="154" width="30" height="35"/>
                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="주점">
                         <color key="titleColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJF-JS-BPR">
-                    <rect key="frame" x="35" y="139" width="34" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJF-JS-BPR">
+                    <rect key="frame" x="35" y="193" width="33" height="35"/>
                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="PC방">
                         <color key="titleColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59a-aT-ldb">
-                    <rect key="frame" x="238" y="139" width="39" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59a-aT-ldb">
+                    <rect key="frame" x="238" y="193" width="42" height="35"/>
                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="노래방">
@@ -94,30 +94,19 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSB-EA-9pB">
-                    <rect key="frame" x="357" y="11" width="33" height="28"/>
+                    <rect key="frame" x="357" y="55" width="33" height="28"/>
                     <state key="normal" image="icComplete">
                         <color key="titleColor" red="0.20392156862745098" green="0.42745098039215684" blue="0.95294117647058818" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8y-6C-OKO">
-                    <rect key="frame" x="0.0" y="52" width="414" height="1"/>
-                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="ewA-OM-y5c"/>
-                    </constraints>
-                </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="6LH-Ma-Na5" firstAttribute="top" secondItem="NLY-2z-7TQ" secondAttribute="bottom" constant="29" id="AoF-MU-Y0e"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="y8y-6C-OKO" secondAttribute="trailing" id="Btf-jg-4qL"/>
                 <constraint firstItem="59a-aT-ldb" firstAttribute="centerY" secondItem="oJF-JS-BPR" secondAttribute="centerY" id="C79-uH-uNc"/>
                 <constraint firstItem="oJF-JS-BPR" firstAttribute="leading" secondItem="zYu-S7-6Lg" secondAttribute="leading" id="HCB-3b-4R2"/>
                 <constraint firstItem="BoC-Qj-tjB" firstAttribute="leading" secondItem="6LH-Ma-Na5" secondAttribute="trailing" constant="173" id="QuG-R6-fq2"/>
-                <constraint firstItem="y8y-6C-OKO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YSU-Gl-tvY"/>
                 <constraint firstItem="XSB-EA-9pB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="11" id="bft-St-Ivh"/>
-                <constraint firstItem="y8y-6C-OKO" firstAttribute="top" secondItem="NLY-2z-7TQ" secondAttribute="bottom" constant="10" id="dGa-ru-UM2"/>
                 <constraint firstItem="6LH-Ma-Na5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="35" id="dGh-cV-p61"/>
                 <constraint firstItem="59a-aT-ldb" firstAttribute="leading" secondItem="ABv-g5-6CT" secondAttribute="leading" id="kjb-dc-gqM"/>
                 <constraint firstItem="zYu-S7-6Lg" firstAttribute="leading" secondItem="6LH-Ma-Na5" secondAttribute="leading" id="kk7-hD-gPC"/>
@@ -130,14 +119,12 @@
                 <constraint firstItem="ABv-g5-6CT" firstAttribute="leading" secondItem="BoC-Qj-tjB" secondAttribute="leading" id="xY0-ZX-0xq"/>
                 <constraint firstItem="oJF-JS-BPR" firstAttribute="top" secondItem="zYu-S7-6Lg" secondAttribute="bottom" constant="4" id="yqQ-Th-TSf"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
         </view>
     </objects>
     <resources>
         <image name="icComplete" width="33" height="28"/>
         <image name="icExitActive" width="27" height="30"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

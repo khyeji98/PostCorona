@@ -10,23 +10,17 @@ import UIKit
 
 extension UITextField {
     
-    func addLeftPadding(_ paddingWidth: CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: paddingWidth, height: self.frame.height))
+    func addLeftPadding() {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
         self.leftView = paddingView
         self.leftViewMode = ViewMode.always
     }
     
-    func addThreeRightImage(image: UIImage) {
-        let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-        rightImage.image = image
-        self.rightView = rightImage
-        self.rightViewMode = ViewMode.always
-    }
-    
-    func addFarRightImage(image: UIImage) {
-        let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+    func addRightImage(image: UIImage) {
+        let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width + 3, height: image.size.height))
         rightImage.image = image
         self.rightView = rightImage
         self.rightViewMode = ViewMode.always
     }
 }
+

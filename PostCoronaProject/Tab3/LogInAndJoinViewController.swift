@@ -9,18 +9,16 @@
 import UIKit
 import Firebase
 
-class LogInViewController: UIViewController, UITextFieldDelegate {
+class LogInAndJoinViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var googleLogInButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,18 +29,28 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    //MARK: IBAction
-    @IBAction func tappedBackButton(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
     }
     
+    func setTextField() {
+        passwordTextField.isSecureTextEntry = true
+    }
+    
+    //MARK: IBAction
     @IBAction func tappedLogInButton(_ sender: UIButton) {
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
+        
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { [weak self] user, error in
             if user != nil{
+
                 print("login success")
-                self?.navigationController?.popViewController(animated: true)
+                
+                guard let nextVC = self?.storyboard?.instantiateViewController(identifier: "MainHome") else { return }
+                
+                self?.present(nextVC, animated: true)
+                    
             }else{
                 print("login fail")
             }
@@ -50,47 +58,35 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tappedJoinButton(_ sender: UIButton) {
-        if let joinVC = self.storyboard?.instantiateViewController(withIdentifier: "join") as? JoinViewController {
-            self.navigationController?.pushViewController(joinVC, animated: true)
+        // Auth 넘기기
+        guard let email = self.emailTextField.text else {
+            return
         }
+        guard let password = self.passwordTextField.text else {
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) {(authResut, error) in
+            print(error?.localizedDescription as Any)
+        
+            guard let user = authResut?.user else {
+                return
+            }
+            // Data 넘기기
+//            guard let storeSignUp = self.storyboard?.instantiateViewController(identifier: "StoreSignUp") as? StoreSignUpViewController else { return }
+
+//            storeSignUp.receiveData(email: self.emailTextField.text!)
+//
+//            storeSignUp.modalTransitionStyle = .coverVertical
+//            self.navigationController?.pushViewController(storeSignUp, animated: true)
+//
+//            if let navigator = self.navigationController {
+//                navigator.pushViewController(StoreSignUpViewController, animated: true)
+//            }
+        }
+        
+        
+        
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-        return true
-    }
-    
-    func setUI() {
-        emailTextField.addLeftPadding(19)
-        passwordTextField.addLeftPadding(19)
-        
-        emailTextField.layer.borderWidth = 1
-        passwordTextField.layer.borderWidth = 1
-        
-        emailTextField.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
-        passwordTextField.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
-        
-        logInButton.layer.shadowColor = UIColor.black.cgColor
-        joinButton.layer.shadowColor = UIColor.black.cgColor
-        googleLogInButton.layer.shadowColor = UIColor.black.cgColor
-        
-        logInButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        joinButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        googleLogInButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        
-        logInButton.layer.shadowOpacity = 0.1
-        joinButton.layer.shadowOpacity = 0.1
-        googleLogInButton.layer.shadowOpacity = 0.1
-        
-        logInButton.layer.shadowRadius = 6
-        joinButton.layer.shadowRadius = 6
-        googleLogInButton.layer.shadowRadius = 6
-        
-        emailTextField.layer.cornerRadius = 4
-        passwordTextField.layer.cornerRadius = 4
-        joinButton.layer.cornerRadius = 4
-        logInButton.layer.cornerRadius = 4
-        googleLogInButton.layer.cornerRadius = 4
-    }
 }
