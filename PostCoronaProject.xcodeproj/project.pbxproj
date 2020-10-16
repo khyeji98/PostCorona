@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		0783ED52E64AD7A91B539CA0 /* Pods_PostCoronaProject_PostCoronaProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E2C05131B54EDA3770CAA1 /* Pods_PostCoronaProject_PostCoronaProjectUITests.framework */; };
 		330C5B1F24F28A20001B0F3E /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C5B1E24F28A20001B0F3E /* UIExtension.swift */; };
-		333CCBF62531A31000DB15A6 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 333CCBF52531A31000DB15A6 /* NotoSansKR-Light.otf */; };
-		333CCBFF2531A4B100DB15A6 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CCBFD2531A4B100DB15A6 /* StoreListTableViewCell.swift */; };
-		333CCC002531A4B100DB15A6 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333CCBFE2531A4B100DB15A6 /* StoreListTableViewCell.xib */; };
+		3331258224DDD0DC00B36E8A /* SurroundingStoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331258124DDD0DC00B36E8A /* SurroundingStoreListTableViewCell.swift */; };
 		335F225F2501DFA700DF1482 /* MyStoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */; };
 		335F226125023B4800DF1482 /* EditStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F226025023B4800DF1482 /* EditStoreViewController.swift */; };
 		3360056F24F80D3000217DB0 /* TodayCheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */; };
 		3360057124F8123D00217DB0 /* TodayCheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360057024F8123D00217DB0 /* TodayCheckListTableViewCell.swift */; };
+		33602B7824F3A30300605A48 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 33602B7724F3A30200605A48 /* NotoSansKR-Light.otf */; };
 		337E9C3124E1E35100475C48 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3024E1E35100475C48 /* SF-Pro.ttf */; };
 		337E9C3324E1E38F00475C48 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3224E1E38F00475C48 /* NotoSansKR-Bold.otf */; };
 		337E9C3524E1E39700475C48 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3424E1E39700475C48 /* NotoSansKR-Medium.otf */; };
@@ -24,16 +23,19 @@
 		337E9C3B24E2205D00475C48 /* StoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E9C3A24E2205D00475C48 /* StoreInfoViewController.swift */; };
 		337E9C3D24E235E600475C48 /* CustomCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3C24E235E600475C48 /* CustomCategoryView.xib */; };
 		337E9C3F24E2366800475C48 /* CustomCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E9C3E24E2366800475C48 /* CustomCategoryView.swift */; };
+		33A1D44424DD5D4F006E62C4 /* ColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1D44324DD5D4F006E62C4 /* ColumnViewController.swift */; };
 		33A1D44624DD5D59006E62C4 /* SurroundingStoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1D44524DD5D59006E62C4 /* SurroundingStoreListViewController.swift */; };
+		33A1D44824DD5E73006E62C4 /* ChildViewController03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1D44724DD5E73006E62C4 /* ChildViewController03.swift */; };
 		33A96ED924D42F2700F7FCC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96ED824D42F2700F7FCC9 /* AppDelegate.swift */; };
 		33A96EDB24D42F2700F7FCC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96EDA24D42F2700F7FCC9 /* SceneDelegate.swift */; };
-		33A96EDD24D42F2700F7FCC9 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96EDC24D42F2700F7FCC9 /* StoreListViewController.swift */; };
+		33A96EDD24D42F2700F7FCC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96EDC24D42F2700F7FCC9 /* HomeViewController.swift */; };
 		33A96EE024D42F2700F7FCC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A96EDE24D42F2700F7FCC9 /* Main.storyboard */; };
 		33A96EE224D42F2800F7FCC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A96EE124D42F2800F7FCC9 /* Assets.xcassets */; };
 		33A96EE524D42F2800F7FCC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A96EE324D42F2800F7FCC9 /* LaunchScreen.storyboard */; };
 		33A96EF024D42F2800F7FCC9 /* PostCoronaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96EEF24D42F2800F7FCC9 /* PostCoronaProjectTests.swift */; };
 		33A96EFB24D42F2900F7FCC9 /* PostCoronaProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96EFA24D42F2900F7FCC9 /* PostCoronaProjectUITests.swift */; };
 		33B4E18124F4B630003D0497 /* AdminStoreViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B4E18024F4B630003D0497 /* AdminStoreViewController .swift */; };
+		33BAFFBA24EE62EC000F7F37 /* StoreCheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BAFFB924EE62EC000F7F37 /* StoreCheckListViewController.swift */; };
 		33BAFFBC24F1A38C000F7F37 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BAFFBB24F1A38C000F7F37 /* AddStoreViewController.swift */; };
 		33BC6D2524E0704A0031DE2A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC6D2424E0704A0031DE2A /* Store.swift */; };
 		33BC6D2A24E096C30031DE2A /* UIFont+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC6D2924E096C30031DE2A /* UIFont+UIColor.swift */; };
@@ -47,9 +49,8 @@
 		33C0744024F976A900716E64 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0743324F934CB00716E64 /* libc++.tbd */; };
 		33C0744524F9791F00716E64 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0744424F9791F00716E64 /* DaumMap.framework */; };
 		33C0744724F97A9D00716E64 /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */; };
-		33D632A9250D0A8700DB9374 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D632A8250D0A8700DB9374 /* JoinViewController.swift */; };
-		33D6403E24D9F4F900C7750F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6403D24D9F4F900C7750F /* LogInViewController.swift */; };
-		33EBC2FE24D7F87A0089EF45 /* QRcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBC2FD24D7F87A0089EF45 /* QRcodeViewController.swift */; };
+		33D6403E24D9F4F900C7750F /* LogInAndJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6403D24D9F4F900C7750F /* LogInAndJoinViewController.swift */; };
+		33EBC2FE24D7F87A0089EF45 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBC2FD24D7F87A0089EF45 /* ChallengeViewController.swift */; };
 		33EBC30024D7F8A80089EF45 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */; };
 		33EBC30524D971430089EF45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33EBC30424D971430089EF45 /* GoogleService-Info.plist */; };
 		832772B5F16D356B4DFBF78D /* Pods_PostCoronaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6531ED8BFFE3D97F481E5EE7 /* Pods_PostCoronaProject.framework */; };
@@ -77,13 +78,12 @@
 		069F3309BEFD8E3C37C353BF /* Pods-PostCoronaProject-PostCoronaProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostCoronaProject-PostCoronaProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0EDC59FF236E9D801180B580 /* Pods_PostCoronaProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PostCoronaProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		330C5B1E24F28A20001B0F3E /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
-		333CCBF52531A31000DB15A6 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
-		333CCBFD2531A4B100DB15A6 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
-		333CCBFE2531A4B100DB15A6 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
+		3331258124DDD0DC00B36E8A /* SurroundingStoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurroundingStoreListTableViewCell.swift; sourceTree = "<group>"; };
 		335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoreListTableViewCell.swift; sourceTree = "<group>"; };
 		335F226025023B4800DF1482 /* EditStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStoreViewController.swift; sourceTree = "<group>"; };
 		3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckListViewController.swift; sourceTree = "<group>"; };
 		3360057024F8123D00217DB0 /* TodayCheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckListTableViewCell.swift; sourceTree = "<group>"; };
+		33602B7724F3A30200605A48 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../../Library/Fonts/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		337E9C3024E1E35100475C48 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		337E9C3224E1E38F00475C48 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		337E9C3424E1E39700475C48 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
@@ -92,11 +92,13 @@
 		337E9C3A24E2205D00475C48 /* StoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoViewController.swift; sourceTree = "<group>"; };
 		337E9C3C24E235E600475C48 /* CustomCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCategoryView.xib; sourceTree = "<group>"; };
 		337E9C3E24E2366800475C48 /* CustomCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryView.swift; sourceTree = "<group>"; };
+		33A1D44324DD5D4F006E62C4 /* ColumnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnViewController.swift; sourceTree = "<group>"; };
 		33A1D44524DD5D59006E62C4 /* SurroundingStoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurroundingStoreListViewController.swift; sourceTree = "<group>"; };
+		33A1D44724DD5E73006E62C4 /* ChildViewController03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController03.swift; sourceTree = "<group>"; };
 		33A96ED524D42F2700F7FCC9 /* PostCoronaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostCoronaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A96ED824D42F2700F7FCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A96EDA24D42F2700F7FCC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		33A96EDC24D42F2700F7FCC9 /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
+		33A96EDC24D42F2700F7FCC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33A96EDF24D42F2700F7FCC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33A96EE124D42F2800F7FCC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33A96EE424D42F2800F7FCC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		33A96EFA24D42F2900F7FCC9 /* PostCoronaProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoronaProjectUITests.swift; sourceTree = "<group>"; };
 		33A96EFC24D42F2900F7FCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33B4E18024F4B630003D0497 /* AdminStoreViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdminStoreViewController .swift"; sourceTree = "<group>"; };
+		33BAFFB924EE62EC000F7F37 /* StoreCheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCheckListViewController.swift; sourceTree = "<group>"; };
 		33BAFFBB24F1A38C000F7F37 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		33BC6D2424E0704A0031DE2A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		33BC6D2924E096C30031DE2A /* UIFont+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+UIColor.swift"; sourceTree = "<group>"; };
@@ -123,9 +126,8 @@
 		33C0743C24F9760B00716E64 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		33C0744424F9791F00716E64 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
-		33D632A8250D0A8700DB9374 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
-		33D6403D24D9F4F900C7750F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		33EBC2FD24D7F87A0089EF45 /* QRcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRcodeViewController.swift; sourceTree = "<group>"; };
+		33D6403D24D9F4F900C7750F /* LogInAndJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInAndJoinViewController.swift; sourceTree = "<group>"; };
+		33EBC2FD24D7F87A0089EF45 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		33EBC30424D971430089EF45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3756237F2805D837A251268E /* Pods-PostCoronaProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostCoronaProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-PostCoronaProjectTests/Pods-PostCoronaProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,7 +182,7 @@
 				337E9C3224E1E38F00475C48 /* NotoSansKR-Bold.otf */,
 				337E9C3424E1E39700475C48 /* NotoSansKR-Medium.otf */,
 				337E9C3624E1E3BA00475C48 /* NotoSansKR-Regular.otf */,
-				333CCBF52531A31000DB15A6 /* NotoSansKR-Light.otf */,
+				33602B7724F3A30200605A48 /* NotoSansKR-Light.otf */,
 				337E9C3024E1E35100475C48 /* SF-Pro.ttf */,
 			);
 			path = shared;
@@ -277,11 +279,13 @@
 			children = (
 				337E9C4124E2367D00475C48 /* Model */,
 				337E9C4024E2366C00475C48 /* View */,
-				333CCBFD2531A4B100DB15A6 /* StoreListTableViewCell.swift */,
-				333CCBFE2531A4B100DB15A6 /* StoreListTableViewCell.xib */,
-				33A96EDC24D42F2700F7FCC9 /* StoreListViewController.swift */,
+				33A96EDC24D42F2700F7FCC9 /* HomeViewController.swift */,
+				33A1D44324DD5D4F006E62C4 /* ColumnViewController.swift */,
 				33A1D44524DD5D59006E62C4 /* SurroundingStoreListViewController.swift */,
+				3331258124DDD0DC00B36E8A /* SurroundingStoreListTableViewCell.swift */,
 				337E9C3A24E2205D00475C48 /* StoreInfoViewController.swift */,
+				33BAFFB924EE62EC000F7F37 /* StoreCheckListViewController.swift */,
+				33A1D44724DD5E73006E62C4 /* ChildViewController03.swift */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -289,7 +293,7 @@
 		33D6404424D9FA4900C7750F /* Tab2 */ = {
 			isa = PBXGroup;
 			children = (
-				33EBC2FD24D7F87A0089EF45 /* QRcodeViewController.swift */,
+				33EBC2FD24D7F87A0089EF45 /* ChallengeViewController.swift */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -298,8 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */,
-				33D6403D24D9F4F900C7750F /* LogInViewController.swift */,
-				33D632A8250D0A8700DB9374 /* JoinViewController.swift */,
+				33D6403D24D9F4F900C7750F /* LogInAndJoinViewController.swift */,
 				335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */,
 				33B4E18024F4B630003D0497 /* AdminStoreViewController .swift */,
 				33BAFFBB24F1A38C000F7F37 /* AddStoreViewController.swift */,
@@ -459,12 +462,11 @@
 				33A96EE224D42F2800F7FCC9 /* Assets.xcassets in Resources */,
 				337E9C3924E1E70700475C48 /* AppleSDGothicNeo.ttc in Resources */,
 				33A96EE024D42F2700F7FCC9 /* Main.storyboard in Resources */,
-				333CCBF62531A31000DB15A6 /* NotoSansKR-Light.otf in Resources */,
+				33602B7824F3A30300605A48 /* NotoSansKR-Light.otf in Resources */,
 				337E9C3324E1E38F00475C48 /* NotoSansKR-Bold.otf in Resources */,
 				337E9C3724E1E3BA00475C48 /* NotoSansKR-Regular.otf in Resources */,
 				337E9C3124E1E35100475C48 /* SF-Pro.ttf in Resources */,
 				337E9C3D24E235E600475C48 /* CustomCategoryView.xib in Resources */,
-				333CCC002531A4B100DB15A6 /* StoreListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,24 +596,26 @@
 			files = (
 				337E9C3B24E2205D00475C48 /* StoreInfoViewController.swift in Sources */,
 				33EBC30024D7F8A80089EF45 /* MyPageViewController.swift in Sources */,
-				33A96EDD24D42F2700F7FCC9 /* StoreListViewController.swift in Sources */,
+				33A96EDD24D42F2700F7FCC9 /* HomeViewController.swift in Sources */,
 				33BC6D2A24E096C30031DE2A /* UIFont+UIColor.swift in Sources */,
 				330C5B1F24F28A20001B0F3E /* UIExtension.swift in Sources */,
 				33A1D44624DD5D59006E62C4 /* SurroundingStoreListViewController.swift in Sources */,
 				33C0743A24F94CB600716E64 /* ResultCell.swift in Sources */,
 				33C0744724F97A9D00716E64 /* AddressSearchViewController.swift in Sources */,
-				33D6403E24D9F4F900C7750F /* LogInViewController.swift in Sources */,
+				33A1D44824DD5E73006E62C4 /* ChildViewController03.swift in Sources */,
+				33D6403E24D9F4F900C7750F /* LogInAndJoinViewController.swift in Sources */,
 				335F226125023B4800DF1482 /* EditStoreViewController.swift in Sources */,
 				33BC6D2524E0704A0031DE2A /* Store.swift in Sources */,
 				33A96ED924D42F2700F7FCC9 /* AppDelegate.swift in Sources */,
-				33D632A9250D0A8700DB9374 /* JoinViewController.swift in Sources */,
 				335F225F2501DFA700DF1482 /* MyStoreListTableViewCell.swift in Sources */,
-				33EBC2FE24D7F87A0089EF45 /* QRcodeViewController.swift in Sources */,
+				33EBC2FE24D7F87A0089EF45 /* ChallengeViewController.swift in Sources */,
 				337E9C3F24E2366800475C48 /* CustomCategoryView.swift in Sources */,
+				3331258224DDD0DC00B36E8A /* SurroundingStoreListTableViewCell.swift in Sources */,
 				33B4E18124F4B630003D0497 /* AdminStoreViewController .swift in Sources */,
 				3360056F24F80D3000217DB0 /* TodayCheckListViewController.swift in Sources */,
-				333CCBFF2531A4B100DB15A6 /* StoreListTableViewCell.swift in Sources */,
 				33BAFFBC24F1A38C000F7F37 /* AddStoreViewController.swift in Sources */,
+				33BAFFBA24EE62EC000F7F37 /* StoreCheckListViewController.swift in Sources */,
+				33A1D44424DD5D4F006E62C4 /* ColumnViewController.swift in Sources */,
 				3360057124F8123D00217DB0 /* TodayCheckListTableViewCell.swift in Sources */,
 				33A96EDB24D42F2700F7FCC9 /* SceneDelegate.swift in Sources */,
 			);
@@ -790,7 +794,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DH9CS7PA5D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -890,7 +893,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DH9CS7PA5D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
