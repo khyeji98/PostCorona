@@ -10,13 +10,13 @@ import UIKit
 import FFPopup
 import Firebase
 import SDWebImage
-import XLPagerTabStrip
 
-class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider {
+class StoreListViewController: UIViewController {
     
     //MARK: IBOutlets
-    @IBOutlet weak var filterButton: UIButton!
-    @IBOutlet weak var surroudingStoreListTableView: UITableView!
+    @IBOutlet weak var regionFilterButton: UIButton!
+    @IBOutlet weak var categoryFilterButton: UIButton!
+    @IBOutlet weak var storeListTableView: UITableView!
     
     //MARK: Properties/Firebase
     let db: Firestore! = Firestore.firestore()
@@ -29,15 +29,27 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
     var buttonTag: Int = 0
     
     //MARK: - Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUI()
+        self.storeListTableView.delegate = self
+        self.storeListTableView.dataSource = self
+        loadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.surroudingStoreListTableView.delegate = self
-        self.surroudingStoreListTableView.dataSource = self
-        loadData()
+//        self.storeListTableView.delegate = self
+//        self.storeListTableView.dataSource = self
+//        loadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setUI() {
+        
     }
     
     @IBAction func tappedFilterButton(_ sender: UIButton) {
@@ -178,20 +190,16 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
     
     @objc func tappedOkButton() {
         DispatchQueue.main.async {
-            self.surroudingStoreListTableView.reloadData()
+            self.storeListTableView.reloadData()
         }
         popup?.dismissType = .slideOutToTop.self
         popup?.dismiss(animated: true)
     }
     
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "내주변")
-    }
-    
     func loadData() {
         storeArray.removeAll()
-        self.surroudingStoreListTableView.delegate = self
-        self.surroudingStoreListTableView.dataSource = self
+        self.storeListTableView.delegate = self
+        self.storeListTableView.dataSource = self
         
         let collectionRef = db.collection("storeList")
         
@@ -201,7 +209,7 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
             }else {
                 self.storeArray = querySnapshot!.documents.compactMap({Store(dictionary: $0.data())})
                 DispatchQueue.main.async {
-                    self.surroudingStoreListTableView.reloadData()
+                    self.storeListTableView.reloadData()
                 }
             }
         }
@@ -209,8 +217,8 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
     
     func loadFilteredData(_ sender: String) {
         storeArray.removeAll()
-        self.surroudingStoreListTableView.delegate = self
-        self.surroudingStoreListTableView.dataSource = self
+        self.storeListTableView.delegate = self
+        self.storeListTableView.dataSource = self
         
         let collectionRef = db.collection("storeList")
         
@@ -228,14 +236,14 @@ class SurroundingStoreListViewController: UIViewController,IndicatorInfoProvider
 }
 
 //MARK: -tableViewExtensions
-extension SurroundingStoreListViewController: UITableViewDataSource {
+extension StoreListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return storeArray.count
     }
      
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "surroundingStoreCell", for: indexPath) as! SurroundingStoreListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreListTableViewCell", for: indexPath) as! StoreListTableViewCell
         let store = storeArray[indexPath.row]
         
         cell.storeNameLabel.text = store.storeName
@@ -245,7 +253,7 @@ extension SurroundingStoreListViewController: UITableViewDataSource {
         
         cell.storeImageView.image = UIImage(named: "default.png")
         
-        _ = Storage.storage().reference(forURL: "gs://together-at001.appspot.com/\(store.storeName).png").downloadURL(completion: { (url, error) in
+        Storage.storage().reference(forURL: "gs://together-at001.appspot.com/\(store.storeName).png").downloadURL(completion: { (url, error) in
             if let url = url {
                 cell.storeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "default.png"))
             }
@@ -265,18 +273,17 @@ extension SurroundingStoreListViewController: UITableViewDataSource {
     }
 }
 
-extension SurroundingStoreListViewController: UITableViewDelegate {
+extension StoreListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selected = storeArray[indexPath.row]
         
-        if let storeInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "storeInfo") as? StoreInfoViewController {
+        if let storeInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "StoreInfo") as? StoreInfoViewController {
             
             storeInfoVC.store = selected
 
-            storeInfoVC.modalPresentationStyle = .fullScreen
-            self.present(storeInfoVC, animated: true, completion: nil)
+            self.navigationController?.pushViewController(storeInfoVC, animated: true)
         }
     }
 }

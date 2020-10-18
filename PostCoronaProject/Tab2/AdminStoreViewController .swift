@@ -57,7 +57,7 @@ class AdminStoreViewController: UIViewController {
     }
     
     @IBAction func tappedAddButton(_ sender: UIButton) {
-        if let addStoreVC = self.storyboard?.instantiateViewController(withIdentifier: "addStore") {
+        if let addStoreVC = self.storyboard?.instantiateViewController(withIdentifier: "AddStore") {
             self.navigationController?.pushViewController(addStoreVC, animated: true)
         }
     }
@@ -86,7 +86,7 @@ extension AdminStoreViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let edit = UIContextualAction(style: .normal, title: "수정", handler: { (action: UIContextualAction, view: UIView, success: (Bool) -> Void) in
-            if let editVC = self.storyboard?.instantiateViewController(withIdentifier: "editStore") as? EditStoreViewController {
+            if let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditStore") as? EditStoreViewController {
                 self.navigationController?.pushViewController(editVC, animated: true)
             }
         })

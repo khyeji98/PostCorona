@@ -47,7 +47,7 @@ class LogInAndJoinViewController: UIViewController, UITextFieldDelegate {
 
                 print("login success")
                 
-                guard let nextVC = self?.storyboard?.instantiateViewController(identifier: "MainHome") else { return }
+                guard let nextVC = self?.storyboard?.instantiateViewController(identifier: "StoreList") else { return }
                 
                 self?.present(nextVC, animated: true)
                     

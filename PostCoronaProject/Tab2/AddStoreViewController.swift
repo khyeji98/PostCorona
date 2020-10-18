@@ -196,7 +196,7 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func tappedLabel(tapGestureRecognizer: UITapGestureRecognizer) {
-        if let addressSearchVC = self.storyboard?.instantiateViewController(withIdentifier: "addressSearch") as? AddressSearchViewController {
+        if let addressSearchVC = self.storyboard?.instantiateViewController(withIdentifier: "AddressSearch") as? AddressSearchViewController {
             addressSearchVC.delegate = self
             self.navigationController?.pushViewController(addressSearchVC, animated: true)
         }

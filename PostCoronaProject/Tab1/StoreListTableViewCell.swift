@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SurroundingStoreListTableViewCell: UITableViewCell {
+class StoreListTableViewCell: UITableViewCell {
 
     // 둥근 이미지들 선택했을 때에도 이미지 모양대로 설정해주기
     @IBOutlet weak var storeImageView: UIImageView!

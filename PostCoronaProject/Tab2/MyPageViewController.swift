@@ -62,7 +62,7 @@ class MyPageViewController: UIViewController {
 //                self.present(logInAndJoinVC, animated: true, completion: nil)
 //            }
 //        }
-        if let storeAdminVC = self.storyboard?.instantiateViewController(withIdentifier: "adminStore"){
+        if let storeAdminVC = self.storyboard?.instantiateViewController(withIdentifier: "AdminStore"){
             self.navigationController?.pushViewController(storeAdminVC, animated: true)
         }
     }
