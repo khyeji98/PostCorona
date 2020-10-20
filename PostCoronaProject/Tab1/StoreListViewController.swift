@@ -30,7 +30,7 @@ class StoreListViewController: UIViewController {
     
     //MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(true)
         setUI()
         self.storeListTableView.delegate = self
         self.storeListTableView.dataSource = self
@@ -39,9 +39,6 @@ class StoreListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.storeListTableView.delegate = self
-//        self.storeListTableView.dataSource = self
-//        loadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -198,8 +195,8 @@ class StoreListViewController: UIViewController {
     
     func loadData() {
         storeArray.removeAll()
-        self.storeListTableView.delegate = self
-        self.storeListTableView.dataSource = self
+//        self.storeListTableView.delegate = self
+//        self.storeListTableView.dataSource = self
         
         let collectionRef = db.collection("storeList")
         
@@ -208,6 +205,7 @@ class StoreListViewController: UIViewController {
                 print(error.localizedDescription)
             }else {
                 self.storeArray = querySnapshot!.documents.compactMap({Store(dictionary: $0.data())})
+                print(self.storeArray)
                 DispatchQueue.main.async {
                     self.storeListTableView.reloadData()
                 }
@@ -217,8 +215,8 @@ class StoreListViewController: UIViewController {
     
     func loadFilteredData(_ sender: String) {
         storeArray.removeAll()
-        self.storeListTableView.delegate = self
-        self.storeListTableView.dataSource = self
+//        self.storeListTableView.delegate = self
+//        self.storeListTableView.dataSource = self
         
         let collectionRef = db.collection("storeList")
         
@@ -227,9 +225,9 @@ class StoreListViewController: UIViewController {
                 print(error.localizedDescription)
             } else {
                 self.storeArray = querySnapshot!.documents.compactMap({Store(dictionary: $0.data())})
-//                DispatchQueue.main.async {
-//                    self.surroudingStoreListTableView.reloadData()
-//                }
+                DispatchQueue.main.async {
+                    self.storeListTableView.reloadData()
+                }
             }
         }
     }
@@ -248,12 +246,11 @@ extension StoreListViewController: UITableViewDataSource {
         
         cell.storeNameLabel.text = store.storeName
         cell.storeAddressLabel.text = "\(store.add1) \(store.add2) \(store.add3)"
-        cell.safeCountingLabel.text = "안심 스티커 \(store.relief)개"
-        cell.email = store.email
+//        cell.email = store.email
         
         cell.storeImageView.image = UIImage(named: "default.png")
         
-        Storage.storage().reference(forURL: "gs://together-at001.appspot.com/\(store.storeName).png").downloadURL(completion: { (url, error) in
+        Storage.storage().reference(forURL: "gs://together-at001.appspot.com/\(store.storeNum).png").downloadURL(completion: { (url, error) in
             if let url = url {
                 cell.storeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "default.png"))
             }
@@ -262,12 +259,10 @@ extension StoreListViewController: UITableViewDataSource {
         cell.storeNameLabel.font = UIFont.NotoSansKR(type: .medium, size: 16)
         cell.distanceLabel.font = UIFont.SFPro(type: .medium, size: 14)
         cell.storeAddressLabel.font = UIFont.AppleSDGothicNeo(type: .medium, size: 12)
-        cell.safeCountingLabel.font = UIFont.AppleSDGothicNeo(type: .medium, size: 12)
         
         cell.storeNameLabel.textColor = UIColor.lightBlack
         cell.distanceLabel.textColor = UIColor.brownGrey
         cell.storeAddressLabel.textColor = UIColor.brownGrey
-        cell.safeCountingLabel.textColor = UIColor.clearBlue
         
         return cell
     }

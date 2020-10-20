@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import MapKit
 import Firebase
+import XLPagerTabStrip
 
-class StoreInfoViewController: UIViewController {
+class StoreInfoViewController: ButtonBarPagerTabStripViewController {
 
     // MARK: IBOutlets
     @IBOutlet weak var backButton: UIButton!
@@ -31,14 +31,15 @@ class StoreInfoViewController: UIViewController {
     @IBOutlet weak var staffTrainingImageView: UIImageView!
     @IBOutlet weak var checkListButton: UIButton!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var storeLocationMTMapView: MKMapView!
+//    @IBOutlet weak var storeLocationMTMapView: MKMapView!
     
-    var store = Store(storeName: "", add: "", add1: "", add2: "", add3: "", email: "", category: "", phone1: "", phone2: "", storeNum: "", url: "", relief: 0, x: "", y: "")
+    var store = Store(storeName: "", add1: "", add2: "", add3: "", roadAdd1: "", roadAdd2: "", email: "", category: "", phone1: "", phone2: "", storeNum: "", url: "", relief: 0, x: "", y: "")
     
     var phone3: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureButtonBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +47,7 @@ class StoreInfoViewController: UIViewController {
         
         storeNameLabel.text = store.storeName
         safeCountingLabel.text = "안심 스티커 \(store.relief)개"
-        addressLabel.text = store.add
+//        addressLabel.text = "\(store.roadAdd1) \(store.roadAdd2)"
         
         if store.phone1 != "", store.phone2 != "" {
             callButton.imageView?.image = UIImage(named: "callActive.png")
@@ -59,13 +60,15 @@ class StoreInfoViewController: UIViewController {
             if self.store.phone2.count == 7 {
                 let strIndex1 = self.store.phone2.index(self.store.phone2.startIndex, offsetBy: 0) ... self.store.phone2.index(self.store.phone2.endIndex, offsetBy: -5)
                 let strIndex2 = self.store.phone2.index(self.store.phone2.startIndex, offsetBy: 3) ..< self.store.phone2.index(self.store.phone2.endIndex, offsetBy: 0)
-                self.store.phone2 = String(self.store.phone2[strIndex1])
+                
                 self.phone3 = String(self.store.phone2[strIndex2])
+                self.store.phone2 = String(self.store.phone2[strIndex1])
             } else if self.store.phone2.count == 8 {
-                let strIndex1 = self.store.phone2.index(self.store.phone2.startIndex, offsetBy: 0) ... self.store.phone2.index(self.store.phone2.startIndex, offsetBy: -5)
+                let strIndex1 = self.store.phone2.index(self.store.phone2.startIndex, offsetBy: 0) ... self.store.phone2.index(self.store.phone2.endIndex, offsetBy: -5)
                 let strIndex2 = self.store.phone2.index(self.store.phone2.startIndex, offsetBy: 4) ..< self.store.phone2.index(self.store.phone2.endIndex, offsetBy: 0)
-                self.store.phone2 = String(self.store.phone2[strIndex1])
+                
                 self.phone3 = String(self.store.phone2[strIndex2])
+                self.store.phone2 = String(self.store.phone2[strIndex1])
             }
         }
         
@@ -80,6 +83,43 @@ class StoreInfoViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        
+        let child1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "Disinfection") as! DisinfectionViewController
+        let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "Taste") as! TasteViewController
+        let child3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "Hygiene") as! HygieneViewController
+        
+        if self.store.category == "food" || self.store.category == "cafe" || self.store.category == "bar" {
+            return [child1, child2, child3]
+        } else if self.store.category == "karaoke" || self.store.category == "pc" {
+            return [child1, child3]
+        }
+        
+        return []
+    }
+    
+    func configureButtonBar() {
+        settings.style.buttonBarBackgroundColor = .white
+        settings.style.buttonBarItemBackgroundColor = .white
+        
+        settings.style.buttonBarItemFont = .NotoSansKR(type: .bold, size: 17)
+        settings.style.buttonBarItemTitleColor = .darkBlack
+        
+        settings.style.buttonBarMinimumLineSpacing = 0
+        settings.style.buttonBarItemsShouldFillAvailableWidth = true
+        settings.style.buttonBarLeftContentInset = 0
+        settings.style.buttonBarRightContentInset = 0
+        
+        settings.style.selectedBarHeight = 5.0
+        settings.style.selectedBarBackgroundColor = .deepSkyBlue
+        
+        changeCurrentIndexProgressive = {[weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?,  progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex == true else { return }
+            oldCell?.label.textColor = .darkBlack
+            newCell?.label.textColor = .deepSkyBlue
+        }
     }
     
     @IBAction func tappedCallButton(_ sender: Any) {
@@ -111,12 +151,6 @@ class StoreInfoViewController: UIViewController {
     }
     
     @IBAction func tappedBackButton(_ sender: UIButton) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func tappedCheckListButton(_ sender: UIButton) {
-        if let checkListVC = self.storyboard?.instantiateViewController(withIdentifier: "storeCheckList"){
-            self.navigationController?.pushViewController(checkListVC, animated: true)
-        }
+        self.navigationController?.popViewController(animated: true)
     }
 }

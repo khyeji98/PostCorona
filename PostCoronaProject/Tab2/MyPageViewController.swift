@@ -46,41 +46,36 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func tappedGoToLogInButton(_ sender: UIButton) {
-        if let logInAndJoinVC = self.storyboard?.instantiateViewController(withIdentifier: "logInAndJoin"){
-            self.navigationController?.pushViewController(logInAndJoinVC, animated: true)
+        if let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "LogIn") {
+            self.navigationController?.pushViewController(logInVC, animated: true)
         }
     }
     
     @IBAction func tappedStoreAdminButton(_ sender: UIButton) {
-//        if Auth.auth().currentUser != nil {
-//            if let storeAdminVC = self.storyboard?.instantiateViewController(withIdentifier: "adminStore"){
-//                self.navigationController?.pushViewController(storeAdminVC, animated: true)
-//            }
-//        } else {
-//            if let logInAndJoinVC = self.storyboard?.instantiateViewController(withIdentifier: "logInAndJoin"){
-//                logInAndJoinVC.modalPresentationStyle = .overFullScreen
-//                self.present(logInAndJoinVC, animated: true, completion: nil)
-//            }
-//        }
-        if let storeAdminVC = self.storyboard?.instantiateViewController(withIdentifier: "AdminStore"){
-            self.navigationController?.pushViewController(storeAdminVC, animated: true)
+        guard let adminVC = self.storyboard?.instantiateViewController(withIdentifier: "Admin")else{ return }
+        guard let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "LogIn")else{ return }
+        
+        if Auth.auth().currentUser != nil {
+            self.navigationController?.pushViewController(adminVC, animated: true)
+        } else {
+            self.navigationController?.pushViewController(logInVC, animated: true)
         }
     }
     
     @IBAction func tappedNoticeButton(_ sender: UIButton) {
-        if let noticeVC = self.storyboard?.instantiateViewController(withIdentifier: "notice"){
+        if let noticeVC = self.storyboard?.instantiateViewController(withIdentifier: "Notice"){
             self.navigationController?.pushViewController(noticeVC, animated: true)
         }
     }
     
     @IBAction func tappedAlarmButton(_ sender: UIButton) {
-        if let alarmVC = self.storyboard?.instantiateViewController(withIdentifier: "alarm"){
-            self.navigationController?.pushViewController(alarmVC, animated: true)
+        if let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "Push"){
+            self.navigationController?.pushViewController(pushVC, animated: true)
         }
     }
     
     @IBAction func tappedHelpButton(_ sender: UIButton) {
-        if let helpVC = self.storyboard?.instantiateViewController(withIdentifier: "help"){
+        if let helpVC = self.storyboard?.instantiateViewController(withIdentifier: "Help"){
             self.navigationController?.pushViewController(helpVC, animated: true)
         }
     }

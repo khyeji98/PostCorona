@@ -35,77 +35,6 @@ class CustomCategoryView: UIView {
     
     var popup : FFPopup?
     
-//    @IBAction func tappedTotalButton(_ sender: UIButton) {
-//        totalButton.tag = 0
-//        totalButton.isSelected = !totalButton.isSelected
-//        if totalButton.isSelected == true{
-//            cafeButton.isSelected = false
-//            foodButton.isSelected = false
-//            pubButton.isSelected = false
-//            pcButton.isSelected = false
-//            singButton.isSelected = false
-//        }
-//    }
-//
-//    @IBAction func tappedFoodButton(_ sender: UIButton) {
-//        foodButton.tag = 1
-//        foodButton.isSelected = !foodButton.isSelected
-//        if foodButton.isSelected == true {
-//            totalButton.isSelected = false
-//            cafeButton.isSelected = false
-//            pubButton.isSelected = false
-//            pcButton.isSelected = false
-//            singButton.isSelected = false
-//        }
-//    }
-//
-//    @IBAction func tappedCafeButton(_ sender: UIButton) {
-//        cafeButton.tag = 2
-//        cafeButton.isSelected = !cafeButton.isSelected
-//        if cafeButton.isSelected == true {
-//            totalButton.isSelected = false
-//            foodButton.isSelected = false
-//            pubButton.isSelected = false
-//            pcButton.isSelected = false
-//            singButton.isSelected = false
-//        }
-//    }
-//
-//    @IBAction func tappedPubButton(_ sender: UIButton) {
-//        pubButton.tag = 3
-//        pubButton.isSelected = !pubButton.isSelected
-//        if pubButton.isSelected == true{
-//            totalButton.isSelected = false
-//            foodButton.isSelected = false
-//            cafeButton.isSelected = false
-//            pcButton.isSelected = false
-//            singButton.isSelected = false
-//        }
-//    }
-//
-//    @IBAction func tappedPcButton(_ sender: UIButton) {
-//        pcButton.tag = 4
-//        pcButton.isSelected = !pcButton.isSelected
-//        if pcButton.isSelected == true {
-//            totalButton.isSelected = false
-//            foodButton.isSelected = false
-//            cafeButton.isSelected = false
-//            pubButton.isSelected = false
-//            singButton.isSelected = false
-//        }
-//    }
-//
-//    @IBAction func tappedSingButton(_ sender: UIButton) {
-//        singButton.isSelected = !singButton.isSelected
-//        if singButton.isSelected == true {
-//            totalButton.isSelected = false
-//            foodButton.isSelected = false
-//            cafeButton.isSelected = false
-//            pubButton.isSelected = false
-//            pcButton.isSelected = false
-//        }
-//    }
-    
       override init(frame: CGRect) {
           super.init(frame: frame)
           setup()
@@ -129,50 +58,5 @@ class CustomCategoryView: UIView {
         pubButton.isSelected = !pubButton.isSelected
         pcButton.isSelected = !pcButton.isSelected
         singButton.isSelected = !singButton.isSelected
-        
-//        if totalButton.isSelected == true{
-//            cafeButton.isSelected = false
-//            foodButton.isSelected = false
-//            pubButton.isSelected = false
-//            pcButton.isSelected = false
-//            singButton.isSelected = false
-//        } else if foodButton.isSelected == true {
-//            totalButton.isSelected = false
-//            cafeButton.isSelected = false
-//            pubButton.isSelected = false
-//            pcButton.isSelected = false
-//            singButton.isSelected = false
-//        } else if cafeButton.isSelected == true {
-//            totalButton.isSelected = false
-//            foodButton.isSelected = false
-//            pubButton.isSelected = false
-//            pcButton.isSelected = false
-//            singButton.isSelected = false
-//        } else if pubButton.isSelected == true{
-//            totalButton.isSelected = false
-//            foodButton.isSelected = false
-//            cafeButton.isSelected = false
-//            pcButton.isSelected = false
-//            singButton.isSelected = false
-//        }else if pcButton.isSelected == true {
-//            totalButton.isSelected = false
-//            foodButton.isSelected = false
-//            cafeButton.isSelected = false
-//            pubButton.isSelected = false
-//            singButton.isSelected = false
-//        }else if singButton.isSelected == true {
-//            totalButton.isSelected = false
-//            foodButton.isSelected = false
-//            cafeButton.isSelected = false
-//            pubButton.isSelected = false
-//            pcButton.isSelected = false
-//        }
-
-//        totalButton.tag = 0
-//        foodButton.tag = 1
-//        cafeButton.tag = 2
-//        pubButton.tag = 3
-//        pcButton.tag = 4
-//        singButton.tag = 5
       }
 }

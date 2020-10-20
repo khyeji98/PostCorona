@@ -11,6 +11,9 @@
 		330C5B1F24F28A20001B0F3E /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C5B1E24F28A20001B0F3E /* UIExtension.swift */; };
 		330E3AFA253CAE310039416B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 330E3AF9253CAE310039416B /* NotoSansKR-Light.otf */; };
 		3331258224DDD0DC00B36E8A /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */; };
+		3339C5A1253DB91700D1D21B /* DisinfectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5A0253DB91700D1D21B /* DisinfectionViewController.swift */; };
+		3339C5A6253DB97000D1D21B /* TasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5A5253DB97000D1D21B /* TasteViewController.swift */; };
+		3339C5AB253DBA5600D1D21B /* HygieneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5AA253DBA5600D1D21B /* HygieneViewController.swift */; };
 		335F225F2501DFA700DF1482 /* MyStoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */; };
 		335F226125023B4800DF1482 /* EditStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F226025023B4800DF1482 /* EditStoreViewController.swift */; };
 		3360056F24F80D3000217DB0 /* TodayCheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */; };
@@ -46,9 +49,9 @@
 		33C0744024F976A900716E64 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0743324F934CB00716E64 /* libc++.tbd */; };
 		33C0744524F9791F00716E64 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0744424F9791F00716E64 /* DaumMap.framework */; };
 		33C0744724F97A9D00716E64 /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */; };
-		33D6403E24D9F4F900C7750F /* LogInAndJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6403D24D9F4F900C7750F /* LogInAndJoinViewController.swift */; };
+		33CDE99A253F15E7006741CB /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CDE999253F15E7006741CB /* JoinViewController.swift */; };
+		33D6403E24D9F4F900C7750F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6403D24D9F4F900C7750F /* LogInViewController.swift */; };
 		33EBC30024D7F8A80089EF45 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */; };
-		33EBC30524D971430089EF45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33EBC30424D971430089EF45 /* GoogleService-Info.plist */; };
 		832772B5F16D356B4DFBF78D /* Pods_PostCoronaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6531ED8BFFE3D97F481E5EE7 /* Pods_PostCoronaProject.framework */; };
 		890CA6B063FA79553DF879D1 /* Pods_PostCoronaProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDC59FF236E9D801180B580 /* Pods_PostCoronaProjectTests.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +79,9 @@
 		330C5B1E24F28A20001B0F3E /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		330E3AF9253CAE310039416B /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
+		3339C5A0253DB91700D1D21B /* DisinfectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisinfectionViewController.swift; sourceTree = "<group>"; };
+		3339C5A5253DB97000D1D21B /* TasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteViewController.swift; sourceTree = "<group>"; };
+		3339C5AA253DBA5600D1D21B /* HygieneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HygieneViewController.swift; sourceTree = "<group>"; };
 		335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoreListTableViewCell.swift; sourceTree = "<group>"; };
 		335F226025023B4800DF1482 /* EditStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStoreViewController.swift; sourceTree = "<group>"; };
 		3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckListViewController.swift; sourceTree = "<group>"; };
@@ -119,9 +125,9 @@
 		33C0743C24F9760B00716E64 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		33C0744424F9791F00716E64 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
-		33D6403D24D9F4F900C7750F /* LogInAndJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInAndJoinViewController.swift; sourceTree = "<group>"; };
+		33CDE999253F15E7006741CB /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		33D6403D24D9F4F900C7750F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		33EBC30424D971430089EF45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3756237F2805D837A251268E /* Pods-PostCoronaProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostCoronaProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-PostCoronaProjectTests/Pods-PostCoronaProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AB7CD4B2AC645D5B5904D77 /* Pods-PostCoronaProject-PostCoronaProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostCoronaProject-PostCoronaProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		548993D57117C8D18ECD18C5 /* Pods-PostCoronaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostCoronaProject.debug.xcconfig"; path = "Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +173,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3339C5AF253DBA6500D1D21B /* ButtonBarPagerTabStripVCs */ = {
+			isa = PBXGroup;
+			children = (
+				3339C5A0253DB91700D1D21B /* DisinfectionViewController.swift */,
+				3339C5A5253DB97000D1D21B /* TasteViewController.swift */,
+				3339C5AA253DBA5600D1D21B /* HygieneViewController.swift */,
+			);
+			path = ButtonBarPagerTabStripVCs;
+			sourceTree = "<group>";
+		};
 		337E9C2724E1E10800475C48 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +239,6 @@
 		33A96ED724D42F2700F7FCC9 /* PostCoronaProject */ = {
 			isa = PBXGroup;
 			children = (
-				33EBC30424D971430089EF45 /* GoogleService-Info.plist */,
 				33A96ED824D42F2700F7FCC9 /* AppDelegate.swift */,
 				33A96EDA24D42F2700F7FCC9 /* SceneDelegate.swift */,
 				337E9C2724E1E10800475C48 /* Shared */,
@@ -273,6 +288,7 @@
 				33A1D44524DD5D59006E62C4 /* StoreListViewController.swift */,
 				3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */,
 				337E9C3A24E2205D00475C48 /* StoreInfoViewController.swift */,
+				3339C5AF253DBA6500D1D21B /* ButtonBarPagerTabStripVCs */,
 				33BAFFB924EE62EC000F7F37 /* StoreCheckListViewController.swift */,
 			);
 			path = Tab1;
@@ -282,7 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */,
-				33D6403D24D9F4F900C7750F /* LogInAndJoinViewController.swift */,
+				33D6403D24D9F4F900C7750F /* LogInViewController.swift */,
+				33CDE999253F15E7006741CB /* JoinViewController.swift */,
 				335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */,
 				33B4E18024F4B630003D0497 /* AdminStoreViewController .swift */,
 				33BAFFBB24F1A38C000F7F37 /* AddStoreViewController.swift */,
@@ -338,7 +355,8 @@
 				33A96ED124D42F2700F7FCC9 /* Sources */,
 				33A96ED224D42F2700F7FCC9 /* Frameworks */,
 				33A96ED324D42F2700F7FCC9 /* Resources */,
-				3B8577756DBB5C54D2DFB8A5 /* [CP] Embed Pods Frameworks */,
+				E89670303241F3A10C874175 /* [CP] Embed Pods Frameworks */,
+				EAF06BD13DC0368C6B3DA7A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -376,7 +394,8 @@
 				33A96EF224D42F2900F7FCC9 /* Sources */,
 				33A96EF324D42F2900F7FCC9 /* Frameworks */,
 				33A96EF424D42F2900F7FCC9 /* Resources */,
-				B1810F7E447CAE505A853DF9 /* [CP] Embed Pods Frameworks */,
+				FB1B4076DCCE54126EF860E5 /* [CP] Embed Pods Frameworks */,
+				D45E78C520D33FB5CD402C8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -437,7 +456,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33A96EE524D42F2800F7FCC9 /* LaunchScreen.storyboard in Resources */,
-				33EBC30524D971430089EF45 /* GoogleService-Info.plist in Resources */,
 				337E9C3524E1E39700475C48 /* NotoSansKR-Medium.otf in Resources */,
 				33A96EE224D42F2800F7FCC9 /* Assets.xcassets in Resources */,
 				337E9C3924E1E70700475C48 /* AppleSDGothicNeo.ttc in Resources */,
@@ -467,23 +485,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3B8577756DBB5C54D2DFB8A5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4D1E0704409795A58C4771DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,21 +529,55 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1810F7E447CAE505A853DF9 /* [CP] Embed Pods Frameworks */ = {
+		D45E78C520D33FB5CD402C8A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E89670303241F3A10C874175 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAF06BD13DC0368C6B3DA7A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9474064C2421B368428A36A /* [CP] Check Pods Manifest.lock */ = {
@@ -567,6 +602,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FB1B4076DCCE54126EF860E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -581,15 +633,19 @@
 				33A1D44624DD5D59006E62C4 /* StoreListViewController.swift in Sources */,
 				33C0743A24F94CB600716E64 /* ResultCell.swift in Sources */,
 				33C0744724F97A9D00716E64 /* AddressSearchViewController.swift in Sources */,
-				33D6403E24D9F4F900C7750F /* LogInAndJoinViewController.swift in Sources */,
+				33D6403E24D9F4F900C7750F /* LogInViewController.swift in Sources */,
 				335F226125023B4800DF1482 /* EditStoreViewController.swift in Sources */,
 				33BC6D2524E0704A0031DE2A /* Store.swift in Sources */,
+				33CDE99A253F15E7006741CB /* JoinViewController.swift in Sources */,
 				33A96ED924D42F2700F7FCC9 /* AppDelegate.swift in Sources */,
 				335F225F2501DFA700DF1482 /* MyStoreListTableViewCell.swift in Sources */,
+				3339C5A6253DB97000D1D21B /* TasteViewController.swift in Sources */,
 				337E9C3F24E2366800475C48 /* CustomCategoryView.swift in Sources */,
 				3331258224DDD0DC00B36E8A /* StoreListTableViewCell.swift in Sources */,
+				3339C5A1253DB91700D1D21B /* DisinfectionViewController.swift in Sources */,
 				33B4E18124F4B630003D0497 /* AdminStoreViewController .swift in Sources */,
 				3360056F24F80D3000217DB0 /* TodayCheckListViewController.swift in Sources */,
+				3339C5AB253DBA5600D1D21B /* HygieneViewController.swift in Sources */,
 				33BAFFBC24F1A38C000F7F37 /* AddStoreViewController.swift in Sources */,
 				33BAFFBA24EE62EC000F7F37 /* StoreCheckListViewController.swift in Sources */,
 				3360057124F8123D00217DB0 /* TodayCheckListTableViewCell.swift in Sources */,

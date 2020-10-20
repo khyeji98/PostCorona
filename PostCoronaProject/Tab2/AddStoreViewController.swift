@@ -45,6 +45,7 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
     @IBAction func tappedOkButton(_ sender: UIButton) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         guard let userEmail = Auth.auth().currentUser?.email else { return }
+        
         if let storeName = self.storeNameTextField.text {
             db.collection("storeList").document(storeName).setData([
                 "add": self.storeAddress.roadAddr,

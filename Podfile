@@ -4,17 +4,21 @@
 target 'PostCoronaProject' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+
   pod 'XLPagerTabStrip', '~> 9.0'
   pod 'FFPopup'
+  pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'SDWebImage'
+
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Analytics'
   pod 'Firebase/Storage'
-  pod 'Alamofire', '~> 4.4'
-  pod 'SwiftyJSON', '~> 4.0'
-  pod 'SDWebImage'
+
   # add the Firebase pod for G
   # add the Firebase pod for Google Analytics
   # add pods for any other desired Firebase products
