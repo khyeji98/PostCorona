@@ -29,7 +29,7 @@ class CustomCategoryView: UIView {
     @IBOutlet weak var totalButton: UIButton!
     @IBOutlet weak var foodButton: UIButton!
     @IBOutlet weak var cafeButton: UIButton!
-    @IBOutlet weak var pubButton: UIButton!
+    @IBOutlet weak var barButton: UIButton!
     @IBOutlet weak var pcButton: UIButton!
     @IBOutlet weak var singButton: UIButton!
     
@@ -52,11 +52,18 @@ class CustomCategoryView: UIView {
         view.frame = self.bounds
         self.addSubview(view)
         
-        totalButton.isSelected = !totalButton.isSelected
-        foodButton.isSelected = !foodButton.isSelected
-        cafeButton.isSelected = !cafeButton.isSelected
-        pubButton.isSelected = !pubButton.isSelected
-        pcButton.isSelected = !pcButton.isSelected
-        singButton.isSelected = !singButton.isSelected
+        totalButton.tag = 0
+        foodButton.tag = 1
+        cafeButton.tag = 2
+        barButton.tag = 3
+        pcButton.tag = 4
+        singButton.tag = 5
+        
+//        totalButton.isSelected = !totalButton.isSelected
+//        foodButton.isSelected = !foodButton.isSelected
+//        cafeButton.isSelected = !cafeButton.isSelected
+//        barButton.isSelected = !barButton.isSelected
+//        pcButton.isSelected = !pcButton.isSelected
+//        singButton.isSelected = !singButton.isSelected
       }
 }

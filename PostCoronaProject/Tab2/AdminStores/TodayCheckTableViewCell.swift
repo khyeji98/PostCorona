@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayCheckListTableViewCell: UITableViewCell {
+class TodayCheckTableViewCell: UITableViewCell {
 
     @IBOutlet weak var checkListLabel: UILabel!
     @IBOutlet weak var checkButton: UIButton!

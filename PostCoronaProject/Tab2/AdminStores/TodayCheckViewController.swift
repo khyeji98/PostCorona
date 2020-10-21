@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class TodayCheckListViewController: UIViewController {
+class TodayCheckViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var storeNameLabel: UILabel!

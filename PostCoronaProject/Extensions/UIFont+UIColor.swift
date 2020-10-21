@@ -57,7 +57,7 @@ extension UIFont {
 
 extension UIColor {
 
-    @nonobjc class var battleshipGrey: UIColor {
+    @nonobjc class var battleshipGray: UIColor {
         return UIColor(red: 109.0 / 255.0, green: 114.0 / 255.0, blue: 120.0 / 255.0, alpha: 1.0)
     }
 
@@ -65,7 +65,7 @@ extension UIColor {
         return UIColor(white: 51.0 / 255.0, alpha: 1.0)
     }
 
-    @nonobjc class var brownGrey: UIColor {
+    @nonobjc class var brownGray: UIColor {
         return UIColor(white: 162.0 / 255.0, alpha: 1.0)
     }
 
@@ -85,7 +85,7 @@ extension UIColor {
       return UIColor(red: 39.0 / 255.0, green: 34.0 / 255.0, blue: 30.0 / 255.0, alpha: 1.0)
     }
     
-    @nonobjc class var lightBrownGrey: UIColor {
+    @nonobjc class var brownGrayTwo: UIColor {
       return UIColor(white: 170.0 / 255.0, alpha: 1.0)
     }
     

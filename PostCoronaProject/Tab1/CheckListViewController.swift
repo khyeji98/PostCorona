@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoreCheckListViewController: UIViewController {
+class CheckListViewController: UIViewController {
 
     //MARK: IBOutlets
     @IBOutlet weak var backButton: UIButton!

@@ -320,10 +320,10 @@
             </objects>
             <point key="canvasLocation" x="2687" y="1624"/>
         </scene>
-        <!--Today Check List View Controller-->
+        <!--Today Check View Controller-->
         <scene sceneID="SWP-nd-heD">
             <objects>
-                <viewController storyboardIdentifier="TodayCheckList" id="JXO-IX-MoS" customClass="TodayCheckListViewController" customModule="PostCoronaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TodayCheck" id="JXO-IX-MoS" customClass="TodayCheckViewController" customModule="PostCoronaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w4e-oB-hOx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,7 +353,7 @@
                                 <rect key="frame" x="0.0" y="102" width="414" height="760"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="r4d-zr-BFF" customClass="TodayCheckListTableViewCell" customModule="PostCoronaProject" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="r4d-zr-BFF" customClass="TodayCheckTableViewCell" customModule="PostCoronaProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r4d-zr-BFF" id="Cxz-1e-oKl">
@@ -1548,6 +1548,21 @@
             </objects>
             <point key="canvasLocation" x="3482.608695652174" y="1623.8839285714284"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Pgk-Ys-CG0">
+            <objects>
+                <viewController id="SBZ-P1-1LF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bjx-VX-lZl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fij-S5-KBd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKI-aS-joQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-1302"/>
+        </scene>
         <!--Store List View Controller-->
         <scene sceneID="LMM-Er-zQO">
             <objects>
@@ -1564,8 +1579,14 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvO-nB-KhN">
-                                <rect key="frame" x="348" y="107" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="310" y="107" width="84" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="sJh-9U-zY0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="12"/>
+                                <state key="normal" title="카테고리: 전체">
+                                    <color key="titleColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="tappedFilterButton:" destination="aZI-ES-Yt5" eventType="touchUpInside" id="nYc-Wk-q9O"/>
                                 </connections>
@@ -1710,10 +1731,10 @@
             </objects>
             <point key="canvasLocation" x="-942" y="-160"/>
         </scene>
-        <!--Store Check List View Controller-->
+        <!--Check List View Controller-->
         <scene sceneID="h2L-NB-U5W">
             <objects>
-                <viewController storyboardIdentifier="StoreCheckList" id="EnE-ud-837" customClass="StoreCheckListViewController" customModule="PostCoronaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckList" id="EnE-ud-837" customClass="CheckListViewController" customModule="PostCoronaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AfX-Si-Pty">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1822,13 +1843,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWg-zi-3FR">
-                                                <rect key="frame" x="25" y="1030" width="28" height="23"/>
+                                                <rect key="frame" x="25" y="1030" width="28" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJR-94-Aba">
-                                                <rect key="frame" x="25" y="1068" width="52" height="30"/>
+                                                <rect key="frame" x="25" y="1067.5" width="52" height="30"/>
                                                 <state key="normal" title="신고하기"/>
                                             </button>
                                         </subviews>
