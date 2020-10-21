@@ -61,6 +61,7 @@ let collectionRef = db.collection("checkList")
 - 키워드로 주소 검색하기
 
 ## Solutions
-### tableview cell button을 눌르고 스크롤했을 때 reusablecell이기 때문에 아래 cell button도 선택되어 있음
+참고 :   
+https://iostutorialjunction.com/2018/02/add-custom-checkbox-on-uitableviewcell.html
+https://m.blog.naver.com/PostView.nhn?blogId=tngh818&logNo=221539007835&categoryNo=29&proxyReferer=https:%2F%2Fwww.google.com%2F
 
-참고 : https://iostutorialjunction.com/2018/02/add-custom-checkbox-on-uitableviewcell.html
