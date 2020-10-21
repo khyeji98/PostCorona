@@ -71,8 +71,8 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         categoryPickerTextField.delegate = self
         categoryPickerTextField.text = storeCategories[0]
         firstPhoneNumPickerTextField.text = firstPhoneNums[0]
@@ -81,8 +81,12 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
         setGesture()
         createPickerView()
         DispatchQueue.main.async {
-            self.setupAddTargetIsNotEmptyTextFields()
+            self.checkTextField()
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,7 +133,7 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
     func setGesture() {
         // ImageView
         userImageView.isUserInteractionEnabled = true
-        let imageGesture = UITapGestureRecognizer(target: self, action: #selector(touchToPickPhoto))
+        let imageGesture = UITapGestureRecognizer(target: self, action: #selector(tappedUIImageView))
         userImageView.addGestureRecognizer(imageGesture)
         // Label
         firstAddressLabel.isUserInteractionEnabled = true
@@ -153,16 +157,16 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
         firstPhoneNumPickerTextField.inputAccessoryView = toolBar
     }
     
-    func setupAddTargetIsNotEmptyTextFields() {
+    func checkTextField() {
         okButton.isEnabled = false
-        storeNameTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty(_:)), for: .editingChanged)
-        categoryPickerTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty(_:)), for: .editingChanged)
-        secondPhoneNumTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty(_:)), for: .editingChanged)
-        corporateRegistrationNumTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty(_:)), for: .editingChanged)
-        secondAddressTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty(_:)), for: .editingChanged)
+        storeNameTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
+        categoryPickerTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
+        secondPhoneNumTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
+        corporateRegistrationNumTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
+        secondAddressTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
     }
     
-    @objc func textFieldsIsNotEmpty(_ sender: UITextField) {
+    @objc func notEmptyTextField(_ sender: UITextField) {
         sender.text = sender.text?.trimmingCharacters(in: .whitespaces)
         guard
             let storeName = storeNameTextField.text, !storeName.isEmpty,
@@ -170,8 +174,7 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
             let secondPhone = secondPhoneNumTextField.text, !secondPhone.isEmpty,
             let register = corporateRegistrationNumTextField.text, !register.isEmpty,
             let secondAddr = secondAddressTextField.text, !secondAddr.isEmpty
-            else
-        {
+        else {
                 self.okButton.isEnabled = false
                 self.okButton.backgroundColor = UIColor.veryLightPink
                 return
@@ -179,7 +182,7 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
         okButton.isEnabled = true
     }
     
-    @objc func touchToPickPhoto() {
+    @objc func tappedUIImageView() {
         if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
             picker.delegate = self
             picker.sourceType = .photoLibrary

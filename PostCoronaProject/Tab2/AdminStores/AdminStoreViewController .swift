@@ -70,7 +70,7 @@ extension AdminStoreViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myStoreList", for: indexPath) as! MyStoreListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myStoreList", for: indexPath) as! AdminStoreListTableViewCell
         let myStore = myStoreArray[indexPath.row]
         
         cell.storeNameLabel.text = myStore.storeName
@@ -105,7 +105,7 @@ extension AdminStoreViewController: UITableViewDelegate {
             })
             alertController.addAction(yesPressed)
             alertController.addAction(noPressed)
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true)
         })
         
         edit.backgroundColor = .deepSkyBlue

@@ -14,7 +14,7 @@
 		3339C5A1253DB91700D1D21B /* DisinfectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5A0253DB91700D1D21B /* DisinfectionViewController.swift */; };
 		3339C5A6253DB97000D1D21B /* TasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5A5253DB97000D1D21B /* TasteViewController.swift */; };
 		3339C5AB253DBA5600D1D21B /* HygieneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5AA253DBA5600D1D21B /* HygieneViewController.swift */; };
-		335F225F2501DFA700DF1482 /* MyStoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */; };
+		335F225F2501DFA700DF1482 /* AdminStoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F225E2501DFA700DF1482 /* AdminStoreListTableViewCell.swift */; };
 		335F226125023B4800DF1482 /* EditStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F226025023B4800DF1482 /* EditStoreViewController.swift */; };
 		3360056F24F80D3000217DB0 /* TodayCheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */; };
 		3360057124F8123D00217DB0 /* TodayCheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360057024F8123D00217DB0 /* TodayCheckListTableViewCell.swift */; };
@@ -50,6 +50,7 @@
 		33C0744524F9791F00716E64 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0744424F9791F00716E64 /* DaumMap.framework */; };
 		33C0744724F97A9D00716E64 /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */; };
 		33CDE99A253F15E7006741CB /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CDE999253F15E7006741CB /* JoinViewController.swift */; };
+		33CDE9A9253F22A9006741CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33CDE9A8253F22A9006741CB /* GoogleService-Info.plist */; };
 		33D6403E24D9F4F900C7750F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6403D24D9F4F900C7750F /* LogInViewController.swift */; };
 		33EBC30024D7F8A80089EF45 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */; };
 		832772B5F16D356B4DFBF78D /* Pods_PostCoronaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6531ED8BFFE3D97F481E5EE7 /* Pods_PostCoronaProject.framework */; };
@@ -82,7 +83,7 @@
 		3339C5A0253DB91700D1D21B /* DisinfectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisinfectionViewController.swift; sourceTree = "<group>"; };
 		3339C5A5253DB97000D1D21B /* TasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteViewController.swift; sourceTree = "<group>"; };
 		3339C5AA253DBA5600D1D21B /* HygieneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HygieneViewController.swift; sourceTree = "<group>"; };
-		335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoreListTableViewCell.swift; sourceTree = "<group>"; };
+		335F225E2501DFA700DF1482 /* AdminStoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminStoreListTableViewCell.swift; sourceTree = "<group>"; };
 		335F226025023B4800DF1482 /* EditStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStoreViewController.swift; sourceTree = "<group>"; };
 		3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckListViewController.swift; sourceTree = "<group>"; };
 		3360057024F8123D00217DB0 /* TodayCheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckListTableViewCell.swift; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		33C0744424F9791F00716E64 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
 		33CDE999253F15E7006741CB /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		33CDE9A8253F22A9006741CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		33D6403D24D9F4F900C7750F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		3756237F2805D837A251268E /* Pods-PostCoronaProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostCoronaProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-PostCoronaProjectTests/Pods-PostCoronaProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		33A96ED724D42F2700F7FCC9 /* PostCoronaProject */ = {
 			isa = PBXGroup;
 			children = (
+				33CDE9A8253F22A9006741CB /* GoogleService-Info.plist */,
 				33A96ED824D42F2700F7FCC9 /* AppDelegate.swift */,
 				33A96EDA24D42F2700F7FCC9 /* SceneDelegate.swift */,
 				337E9C2724E1E10800475C48 /* Shared */,
@@ -280,13 +283,28 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		33CDE9A4253F1C72006741CB /* AdminStores */ = {
+			isa = PBXGroup;
+			children = (
+				335F225E2501DFA700DF1482 /* AdminStoreListTableViewCell.swift */,
+				33B4E18024F4B630003D0497 /* AdminStoreViewController .swift */,
+				33BAFFBB24F1A38C000F7F37 /* AddStoreViewController.swift */,
+				335F226025023B4800DF1482 /* EditStoreViewController.swift */,
+				33C0743924F94CB600716E64 /* ResultCell.swift */,
+				33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */,
+				3360057024F8123D00217DB0 /* TodayCheckListTableViewCell.swift */,
+				3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */,
+			);
+			path = AdminStores;
+			sourceTree = "<group>";
+		};
 		33D6404324D9FA3400C7750F /* Tab1 */ = {
 			isa = PBXGroup;
 			children = (
 				337E9C4124E2367D00475C48 /* Model */,
 				337E9C4024E2366C00475C48 /* View */,
-				33A1D44524DD5D59006E62C4 /* StoreListViewController.swift */,
 				3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */,
+				33A1D44524DD5D59006E62C4 /* StoreListViewController.swift */,
 				337E9C3A24E2205D00475C48 /* StoreInfoViewController.swift */,
 				3339C5AF253DBA6500D1D21B /* ButtonBarPagerTabStripVCs */,
 				33BAFFB924EE62EC000F7F37 /* StoreCheckListViewController.swift */,
@@ -300,14 +318,7 @@
 				33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */,
 				33D6403D24D9F4F900C7750F /* LogInViewController.swift */,
 				33CDE999253F15E7006741CB /* JoinViewController.swift */,
-				335F225E2501DFA700DF1482 /* MyStoreListTableViewCell.swift */,
-				33B4E18024F4B630003D0497 /* AdminStoreViewController .swift */,
-				33BAFFBB24F1A38C000F7F37 /* AddStoreViewController.swift */,
-				33C0743924F94CB600716E64 /* ResultCell.swift */,
-				33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */,
-				3360057024F8123D00217DB0 /* TodayCheckListTableViewCell.swift */,
-				3360056E24F80D3000217DB0 /* TodayCheckListViewController.swift */,
-				335F226025023B4800DF1482 /* EditStoreViewController.swift */,
+				33CDE9A4253F1C72006741CB /* AdminStores */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -463,6 +474,7 @@
 				330E3AFA253CAE310039416B /* NotoSansKR-Light.otf in Resources */,
 				337E9C3324E1E38F00475C48 /* NotoSansKR-Bold.otf in Resources */,
 				337E9C3724E1E3BA00475C48 /* NotoSansKR-Regular.otf in Resources */,
+				33CDE9A9253F22A9006741CB /* GoogleService-Info.plist in Resources */,
 				337E9C3124E1E35100475C48 /* SF-Pro.ttf in Resources */,
 				337E9C3D24E235E600475C48 /* CustomCategoryView.xib in Resources */,
 			);
@@ -638,7 +650,7 @@
 				33BC6D2524E0704A0031DE2A /* Store.swift in Sources */,
 				33CDE99A253F15E7006741CB /* JoinViewController.swift in Sources */,
 				33A96ED924D42F2700F7FCC9 /* AppDelegate.swift in Sources */,
-				335F225F2501DFA700DF1482 /* MyStoreListTableViewCell.swift in Sources */,
+				335F225F2501DFA700DF1482 /* AdminStoreListTableViewCell.swift in Sources */,
 				3339C5A6253DB97000D1D21B /* TasteViewController.swift in Sources */,
 				337E9C3F24E2366800475C48 /* CustomCategoryView.swift in Sources */,
 				3331258224DDD0DC00B36E8A /* StoreListTableViewCell.swift in Sources */,

@@ -62,20 +62,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tappedJoinButton(_ sender: UIButton) {
-        // Auth 넘기기
-        guard let email = self.emailTextField.text else {
-            return
-        }
-        guard let password = self.passwordTextField.text else {
-            return
-        }
-        
-        Auth.auth().createUser(withEmail: email, password: password) {(authResut, error) in
-            print(error?.localizedDescription as Any)
-        
-            guard let user = authResut?.user else {
-                return
-            }
+        if let joinVC = self.storyboard?.instantiateViewController(withIdentifier: "Join") {
+            self.navigationController?.pushViewController(joinVC, animated: true)
         }
     }
 }

@@ -627,6 +627,16 @@
                                     <action selector="tappedOkButton:" destination="0b3-ak-KtE" eventType="touchUpInside" id="IlM-xu-iEc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ul-EA-YLk">
+                                <rect key="frame" x="182.5" y="58" width="49" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="ctn-Rm-NEQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IR0-si-OTU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -670,6 +680,7 @@
                             <constraint firstItem="Seb-Sb-esI" firstAttribute="trailing" secondItem="Uz6-eI-iBe" secondAttribute="trailing" id="cI1-fa-enM"/>
                             <constraint firstItem="dUx-pN-G8c" firstAttribute="leading" secondItem="F1a-vz-Mep" secondAttribute="leading" id="cwa-5D-fnJ"/>
                             <constraint firstItem="XbP-8b-PkN" firstAttribute="top" secondItem="F1a-vz-Mep" secondAttribute="bottom" constant="27" id="fNI-1g-Goi"/>
+                            <constraint firstItem="6Ul-EA-YLk" firstAttribute="top" secondItem="IR0-si-OTU" secondAttribute="top" constant="14" id="gRh-Qe-g9j"/>
                             <constraint firstItem="dUx-pN-G8c" firstAttribute="trailing" secondItem="F1a-vz-Mep" secondAttribute="trailing" id="gRi-ck-DTv"/>
                             <constraint firstItem="6I2-RL-Vfn" firstAttribute="top" secondItem="5zg-Iw-a1c" secondAttribute="top" id="gun-bb-jLf"/>
                             <constraint firstItem="wbA-8i-MmI" firstAttribute="leading" secondItem="yEo-fF-fm6" secondAttribute="trailing" constant="2" id="gv0-n3-fne"/>
@@ -681,6 +692,7 @@
                             <constraint firstItem="8jt-sD-Kwb" firstAttribute="leading" secondItem="IR0-si-OTU" secondAttribute="leading" constant="36" id="mKZ-Of-t2Y"/>
                             <constraint firstItem="bu1-M6-OBl" firstAttribute="leading" secondItem="wSJ-8X-d1W" secondAttribute="leading" id="nRY-fT-BaU"/>
                             <constraint firstItem="g8a-R8-fzH" firstAttribute="leading" secondItem="XbP-8b-PkN" secondAttribute="trailing" constant="2" id="ppu-fB-236"/>
+                            <constraint firstItem="6Ul-EA-YLk" firstAttribute="centerX" secondItem="QwZ-Ll-rdS" secondAttribute="centerX" id="rod-86-fh1"/>
                             <constraint firstItem="9Gj-tn-F8d" firstAttribute="top" secondItem="IR0-si-OTU" secondAttribute="top" constant="12" id="vVf-1f-tch"/>
                             <constraint firstItem="yEo-fF-fm6" firstAttribute="top" secondItem="0hS-ve-CMQ" secondAttribute="bottom" constant="36" id="w5o-yp-eCu"/>
                             <constraint firstItem="Uz6-eI-iBe" firstAttribute="trailing" secondItem="dUx-pN-G8c" secondAttribute="trailing" id="wAg-We-Epo"/>
@@ -858,7 +870,7 @@
         <!--Log In View Controller-->
         <scene sceneID="1o6-PZ-T20">
             <objects>
-                <viewController storyboardIdentifier="LogIn" id="zr9-vO-SKd" customClass="LogInViewController" customModule="PostCoronaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogIn" hidesBottomBarWhenPushed="YES" id="zr9-vO-SKd" customClass="LogInViewController" customModule="PostCoronaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ir-AC-ZHh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1015,6 +1027,7 @@
                                 <rect key="frame" x="26" y="56" width="27" height="30"/>
                                 <state key="normal" image="icArrowBack"/>
                                 <connections>
+                                    <action selector="tappedBackButton:" destination="DSS-qJ-T6R" eventType="touchUpInside" id="GUD-LB-rVW"/>
                                     <action selector="tappedBackButton:" destination="Md4-yW-y8G" eventType="touchUpInside" id="PNS-EG-tDk"/>
                                     <action selector="tappedBackButton:" destination="EnE-ud-837" eventType="touchUpInside" id="VaF-61-SC8"/>
                                     <action selector="tappedBackButton:" destination="0b3-ak-KtE" eventType="touchUpInside" id="eUn-pk-acy"/>
@@ -1051,7 +1064,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8i-yP-CWM">
                                 <rect key="frame" x="306" y="412.5" width="73" height="34"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.47058823529999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.47058823529411764" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="AkE-u7-dnB"/>
                                     <constraint firstAttribute="width" constant="73" id="fWd-hv-prU"/>
@@ -1060,6 +1073,9 @@
                                 <state key="normal" title="중복확인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedEmailCheckButton:" destination="DSS-qJ-T6R" eventType="touchUpInside" id="XmE-OT-JH2"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ae-ar-3Ja">
                                 <rect key="frame" x="36" y="445" width="248" height="1"/>
@@ -1137,11 +1153,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="tappedOkButton:" destination="DSS-qJ-T6R" eventType="touchUpInside" id="1oR-Oo-1Me"/>
                                     <action selector="tappedOkButton:" destination="0b3-ak-KtE" eventType="touchUpInside" id="nG4-fp-EYn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 형식이 맞지 않습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-i7-1q7">
-                                <rect key="frame" x="36" y="451.5" width="123" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 형식이 올바르지 않습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-i7-1q7">
+                                <rect key="frame" x="36" y="451.5" width="142" height="14"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="11"/>
                                 <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1195,6 +1212,16 @@
                             <constraint firstItem="44E-72-QXw" firstAttribute="top" secondItem="kSl-q3-kJt" secondAttribute="top" constant="12" id="sKj-bh-m7Q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailCheckButton" destination="E8i-yP-CWM" id="nwF-3Z-2Qm"/>
+                        <outlet property="emailOverlapLabel" destination="xQ1-Wl-Zui" id="6qT-iM-txU"/>
+                        <outlet property="emailTextField" destination="p84-vA-rDm" id="YEN-oA-H0B"/>
+                        <outlet property="emailWrongFormLabel" destination="zFw-i7-1q7" id="h5v-Ja-oig"/>
+                        <outlet property="okButton" destination="bMX-hq-lsR" id="6ke-SD-5us"/>
+                        <outlet property="pwCheckTextField" destination="5kJ-Xm-eMY" id="Pzt-9u-8yN"/>
+                        <outlet property="pwNotSameLabel" destination="bEe-zY-NTj" id="v3f-m6-woh"/>
+                        <outlet property="pwTextField" destination="SEU-Ek-2D6" id="fxh-zq-R00"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDh-1g-fEH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1252,7 +1279,7 @@
                                 <rect key="frame" x="0.0" y="98" width="414" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myStoreList" rowHeight="108" id="SjG-bJ-6GY" customClass="MyStoreListTableViewCell" customModule="PostCoronaProject" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myStoreList" rowHeight="108" id="SjG-bJ-6GY" customClass="AdminStoreListTableViewCell" customModule="PostCoronaProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SjG-bJ-6GY" id="GcH-LK-Ise">

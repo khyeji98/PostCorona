@@ -10,12 +10,23 @@ import UIKit
 
 class EditStoreViewController: UIViewController {
 
+    @IBOutlet weak var storeNameLabel: UILabel!
+    @IBOutlet weak var storeImageView: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func tappedBackButton(_ sender: UIButton) {
+        
     }
 
 }

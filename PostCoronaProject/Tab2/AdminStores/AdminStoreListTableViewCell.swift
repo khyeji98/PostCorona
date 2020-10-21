@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyStoreListTableViewCell: UITableViewCell {
+class AdminStoreListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var storeImageView: UIImageView!
     @IBOutlet weak var storeNameLabel: UILabel!
