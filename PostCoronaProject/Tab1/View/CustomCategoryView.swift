@@ -58,12 +58,5 @@ class CustomCategoryView: UIView {
         barButton.tag = 3
         pcButton.tag = 4
         singButton.tag = 5
-        
-//        totalButton.isSelected = !totalButton.isSelected
-//        foodButton.isSelected = !foodButton.isSelected
-//        cafeButton.isSelected = !cafeButton.isSelected
-//        barButton.isSelected = !barButton.isSelected
-//        pcButton.isSelected = !pcButton.isSelected
-//        singButton.isSelected = !singButton.isSelected
       }
 }

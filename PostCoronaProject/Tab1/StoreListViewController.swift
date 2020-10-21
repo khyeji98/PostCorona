@@ -25,10 +25,10 @@ class StoreListViewController: UIViewController {
     var imageURLArray = [String]()
     
     //MARK: Properties/FFPopup
-    var categoryView: CustomCategoryView?
+    var categoryView = CustomCategoryView()
     var popup : FFPopup?
-//    var currentBtnTag: Int = 0
     var currentCategory = 0
+    var finalCategory = 0
     
     //MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -57,34 +57,79 @@ class StoreListViewController: UIViewController {
         categoryFilterButton.layer.cornerRadius = 4
         categoryFilterButton.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
         categoryFilterButton.layer.borderWidth = 1
+        categoryFilterButton.setTitle("카테고리: 전체", for: .normal)
+        categoryView.totalButton.setTitleColor(.clearBlue, for: .normal)
     }
     
     @IBAction func tappedFilterButton(_ sender: UIButton) {
-        categoryView = CustomCategoryView()
         let layout = FFpopupLayout(horizontal: .center, vertical: .top)
         
-        if let categoryView = self.categoryView {
-            popup = FFPopup(contentView: categoryView)
-            if let popup = self.popup {
-                popup.show(layout: layout)
-                popup.showType = .slideInFromTop
-                popup.maskType = .dimmed
-                popup.dimmedMaskAlpha = 0.5
-                popup.showInDuration = 0.15
-                popup.dismissOutDuration = 0.15
-                popup.shouldDismissOnBackgroundTouch = true
-                popup.shouldDismissOnContentTouch = false
-            }
-            categoryView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 249)
-            categoryView.totalButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
-            categoryView.foodButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
-            categoryView.cafeButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
-            categoryView.barButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
-            categoryView.pcButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
-            categoryView.singButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
-            categoryView.cancelButton.addTarget(self, action: #selector(tappedCancelButton), for: .touchUpInside)
-            categoryView.okButton.addTarget(self, action: #selector(tappedOkButton), for: .touchUpInside)
+        popup = FFPopup(contentView: categoryView)
+        if let popup = self.popup {
+            popup.show(layout: layout)
+            popup.showType = .slideInFromTop
+            popup.maskType = .dimmed
+            popup.dimmedMaskAlpha = 0.5
+            popup.showInDuration = 0.15
+            popup.dismissOutDuration = 0.15
+            popup.shouldDismissOnBackgroundTouch = true
+            popup.shouldDismissOnContentTouch = false
         }
+        categoryView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 249)
+        switch finalCategory {
+        case 0:
+            categoryView.totalButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 1:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 2:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 3:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 4:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 5:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.clearBlue, for: .normal)
+        default:
+            return
+        }
+        categoryView.totalButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
+        categoryView.foodButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
+        categoryView.cafeButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
+        categoryView.barButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
+        categoryView.pcButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
+        categoryView.singButton.addTarget(self, action: #selector(selectCategory(_:)), for: .touchUpInside)
+        categoryView.cancelButton.addTarget(self, action: #selector(tappedCancelButton), for: .touchUpInside)
+        categoryView.okButton.addTarget(self, action: #selector(tappedOkButton), for: .touchUpInside)
     }
     
     @objc func tappedCancelButton() {
@@ -94,230 +139,87 @@ class StoreListViewController: UIViewController {
         }
     }
     
-    @objc func selectTotal() {
-        categoryView = CustomCategoryView()
-        categoryView?.totalButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView?.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-        
-//        if categoryView?.totalButton.isSelected == true {
-//            categoryView?.totalButton.setTitleColor(.veryLightPink, for: .normal)
-//            categoryView?.cafeButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.barButton.isSelected = false
-//            categoryView?.pcButton.isSelected = false
-//            categoryView?.singButton.isSelected = false
-//        }
-//        categoryView?.totalButton.isSelected = !(categoryView?.totalButton.isSelected)!
-        storeArray.removeAll()
-        print("total is selected")
-        loadData()
-    }
-    
-    @objc func selectFood() {
-        categoryView = CustomCategoryView()
-        categoryView?.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.foodButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView?.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-        
-//        if categoryView?.foodButton.isSelected == true {
-//
-//            categoryView?.totalButton.isSelected = false
-//            categoryView?.cafeButton.isSelected = false
-//            categoryView?.barButton.isSelected = false
-//            categoryView?.pcButton.isSelected = false
-//            categoryView?.singButton.isSelected = false
-//        }
-//        categoryView?.foodButton.isSelected = !(categoryView?.foodButton.isSelected)!
-        storeArray.removeAll()
-        print("food is selected")
-        loadFilteredData("food")
-    }
-    
-    @objc func selectCafe() {
-        categoryView = CustomCategoryView()
-        categoryView?.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.cafeButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView?.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-        
-//        if categoryView?.cafeButton.isSelected == true {
-//            categoryView?.totalButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.barButton.isSelected = false
-//            categoryView?.pcButton.isSelected = false
-//            categoryView?.singButton.isSelected = false
-//        }
-//        if categoryView?.cafeButton.titleColor(for: .normal) == UIColor.clearBlue {
-//            categoryView?.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-//        } else if categoryView?.cafeButton.titleColor(for: .normal) == UIColor.brownGrayTwo {
-//            categoryView?.cafeButton.setTitleColor(.clearBlue, for: .normal)
-//        }
-//        categoryView?.cafeButton.isSelected = !(categoryView?.cafeButton.isSelected)!
-        storeArray.removeAll()
-        print("cafe is selected")
-        loadFilteredData("cafe")
-    }
-    
-    @objc func selectPub() {
-        categoryView = CustomCategoryView()
-        categoryView?.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.barButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView?.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-        
-//        if categoryView?.barButton.isSelected == true {
-//
-//            categoryView?.totalButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.cafeButton.isSelected = false
-//            categoryView?.pcButton.isSelected = false
-//            categoryView?.singButton.isSelected = false
-//        }
-//        categoryView?.barButton.isSelected = !(categoryView?.barButton.isSelected)!
-        storeArray.removeAll()
-        print("pub is selected")
-        loadFilteredData("bar")
-    }
-    
-    @objc func selectPc() {
-        categoryView = CustomCategoryView()
-        categoryView?.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.pcButton.setTitleColor(.clearBlue, for: .normal)
-        categoryView?.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-        
-//        if categoryView?.pcButton.isSelected == true {
-//            categoryView?.totalButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.cafeButton.isSelected = false
-//            categoryView?.barButton.isSelected = false
-//            categoryView?.singButton.isSelected = false
-//        }
-//        categoryView?.pcButton.isSelected = !(categoryView?.pcButton.isSelected)!
-        storeArray.removeAll()
-        print("pc is selected")
-        loadFilteredData("pc")
-    }
-    
-    @objc func selectSing() {
-        categoryView = CustomCategoryView()
-        categoryView?.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-        categoryView?.singButton.setTitleColor(.clearBlue, for: .normal)
-        
-//        if categoryView?.singButton.isSelected == true {
-//            categoryView?.totalButton.isSelected = false
-//            categoryView?.foodButton.isSelected = false
-//            categoryView?.cafeButton.isSelected = false
-//            categoryView?.barButton.isSelected = false
-//            categoryView?.pcButton.isSelected = false
-//        }
-//        categoryView?.singButton.isSelected = !(categoryView?.singButton.isSelected)!
-        storeArray.removeAll()
-        print("sing is selected")
-        loadFilteredData("karaoke")
-    }
-    
     @objc func selectCategory(_ sender: UIButton) {
-        categoryView = CustomCategoryView()
-        self.currentCategory = sender.tag
-        
-        if let categoryView = self.categoryView {
-            switch self.currentCategory {
-            case 0:
-                categoryView.totalButton.setTitleColor(.clearBlue, for: .normal)
-                categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-            case 1:
-                categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.foodButton.setTitleColor(.clearBlue, for: .normal)
-                categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-            case 2:
-                categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.cafeButton.setTitleColor(.clearBlue, for: .normal)
-                categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-            case 3:
-                categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.barButton.setTitleColor(.clearBlue, for: .normal)
-                categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-            case 4:
-                categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.pcButton.setTitleColor(.clearBlue, for: .normal)
-                categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
-            case 5:
-                categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
-                categoryView.singButton.setTitleColor(.clearBlue, for: .normal)
-            default:
-                return
-            }
+        currentCategory = sender.tag
+        switch currentCategory {
+        case 0:
+            categoryView.totalButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 1:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 2:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 3:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 4:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.clearBlue, for: .normal)
+            categoryView.singButton.setTitleColor(.brownGrayTwo, for: .normal)
+        case 5:
+            categoryView.totalButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.foodButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.cafeButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.barButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.pcButton.setTitleColor(.brownGrayTwo, for: .normal)
+            categoryView.singButton.setTitleColor(.clearBlue, for: .normal)
+        default:
+            return
         }
-        
     }
     
     @objc func tappedOkButton() {
+        finalCategory = currentCategory
+        
         if let popup = self.popup {
             popup.dismissType = .slideOutToTop.self
             popup.dismiss(animated: true)
         }
         storeArray.removeAll()
         
-        switch self.currentCategory {
+        switch finalCategory {
         case 0:
             loadData()
-            categoryFilterButton.titleLabel?.text = "카테고리: 전체"
+            categoryFilterButton.setTitle("카테고리: 전체", for: .normal)
         case 1:
             loadFilteredData("food")
-            categoryFilterButton.titleLabel?.text = "카테고리: 음식점"
+            categoryFilterButton.setTitle("카테고리: 음식점", for: .normal)
         case 2:
             loadFilteredData("cafe")
-            categoryFilterButton.titleLabel?.text = "카테고리: 카페"
+            categoryFilterButton.setTitle("카테고리: 카페", for: .normal)
         case 3:
             loadFilteredData("bar")
-            categoryFilterButton.titleLabel?.text = "카테고리: 주점"
+            categoryFilterButton.setTitle("카테고리: 주점", for: .normal)
         case 4:
             loadFilteredData("pc")
-            categoryFilterButton.titleLabel?.text = "카테고리: 피시방"
+            categoryFilterButton.setTitle("카테고리: PC방", for: .normal)
         case 5:
             loadFilteredData("karaoke")
-            categoryFilterButton.titleLabel?.text = "카테고리: 노래방"
+            categoryFilterButton.setTitle("카테고리: 노래방", for: .normal)
         default:
             loadData()
-            categoryFilterButton.titleLabel?.text = "카테고리: 404"
+            categoryFilterButton.setTitle("카테고리: 404", for: .normal)
         }
         
         DispatchQueue.main.async {
@@ -385,6 +287,8 @@ extension StoreListViewController: UITableViewDataSource {
                 cell.storeImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "default.png"))
             }
         })
+        
+        cell.storeImageView.layer.cornerRadius = 19
         
         cell.storeNameLabel.font = UIFont.NotoSansKR(type: .medium, size: 16)
         cell.distanceLabel.font = UIFont.SFPro(type: .medium, size: 14)

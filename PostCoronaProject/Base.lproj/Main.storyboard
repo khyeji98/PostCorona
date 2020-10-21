@@ -1579,12 +1579,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvO-nB-KhN">
-                                <rect key="frame" x="310" y="107" width="84" height="30"/>
+                                <rect key="frame" x="304" y="107" width="90" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="84" id="sJh-9U-zY0"/>
+                                    <constraint firstAttribute="width" constant="90" id="sJh-9U-zY0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="12"/>
-                                <state key="normal" title="카테고리: 전체">
+                                <state key="normal" title="Button">
                                     <color key="titleColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
