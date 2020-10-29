@@ -10,69 +10,95 @@ import UIKit
 import Firebase
 
 protocol AddressSearchDelegate {
-    func receiveSeletedAddress(_ selectedAddress: Address?)
+    func receiveSelectedAddress(_ selectedAddress: Address?)
 }
 
 class AddStoreViewController: UIViewController, UITextFieldDelegate {
-    
-    //MARK: IBOutlets
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var storeNameTextField: UITextField!
-    @IBOutlet weak var categoryPickerTextField: UITextField!
-    @IBOutlet weak var firstPhoneNumPickerTextField: UITextField!
-    @IBOutlet weak var secondPhoneNumTextField: UITextField!
-    @IBOutlet weak var corporateRegistrationNumTextField: UITextField!
-    @IBOutlet weak var firstAddressLabel: UILabel!
-    @IBOutlet weak var secondAddressTextField: UITextField!
-    @IBOutlet weak var homepageTextField: UITextField!
-    @IBOutlet weak var okButton: UIButton!
     
     var storeAddress = Address(jibunAddr: "", roadAddr: "", placeName: "", x: "", y: "")
     var splitAddress:[String] = []
     let picker = UIImagePickerController()
     let storeCategories = ["음식점", "카페", "주점", "PC방", "노래방"]
-    let firstPhoneNums = ["02", "031", "032", "041", "042", "043", "044", "051", "052", "053", "054", "055", "061", "062", "063", "064", "010", "011", "016", "017", "019"]
+    let firstPhoneNums = ["해당없음", "02", "031", "032", "041", "042", "043", "044", "051", "052", "053", "054", "055", "061", "062", "063", "064", "010", "011", "016", "017", "019"]
     let db = Firestore.firestore()
     let storage = Storage.storage()
-    let pickerView = UIPickerView()
+    let categoryPickerView = UIPickerView()
+    let phonePickerView = UIPickerView()
     var activeTextField = 0
+    var edit = Bool()
+    var store: Store?
+    var phone1 = String()
+    
+    @IBOutlet weak var storeImageView: UIImageView!
+    @IBOutlet weak var storeNameTextField: UITextField!
+    @IBOutlet weak var categoryPickerTextField: UITextField!
+    @IBOutlet weak var firstPhoneNumPickerTextField: UITextField!
+    @IBOutlet weak var secondPhoneNumTextField: UITextField!
+    @IBOutlet weak var corporateRegistrationNumTextField: UITextField!
+    @IBOutlet weak var firstAddressTextField: UITextField!
+    @IBOutlet weak var secondAddressTextField: UITextField!
+    @IBOutlet weak var homepageTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     @IBAction func tappedBackButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func tappedOkButton(_ sender: UIButton) {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
+    @IBAction func tappedNextButton(_ sender: UIButton) {
         guard let userEmail = Auth.auth().currentUser?.email else { return }
         
-        if let storeName = self.storeNameTextField.text {
-            db.collection("storeList").document(storeName).setData([
-                "add": self.storeAddress.roadAddr,
-                "add1": self.splitAddress[0],
-                "add2": self.splitAddress[1],
-                "add3": self.splitAddress[2],
-                "category": categoryPickerTextField.text!,
-                "email": userEmail,
-                "phone1": firstPhoneNumPickerTextField.text!,
-                "phone2": secondPhoneNumTextField.text!,
-                "relief": 0,
-                "storeName": storeNameTextField.text!,
-                "storeNum": corporateRegistrationNumTextField.text!,
-                "uid": userID,
-                "url": homepageTextField.text ?? "",
-                "x": self.storeAddress.x,
-                "y": self.storeAddress.y])
-            
-            if let userImage = userImageView.image?.pngData() {
-                storage.reference(forURL: "gs://together-at001.appspot.com/\(storeName).png").putData(userImage)
+        if firstPhoneNumPickerTextField.text! == "해당없음" {
+            phone1 = ""
+        } else {
+            phone1 = firstPhoneNumPickerTextField.text!
+        }
+        DispatchQueue.global().async {
+            if let storeNum = self.corporateRegistrationNumTextField.text {
+                self.db.collection("store").document(storeNum).setData([
+                    "roadAdd": "\(self.firstAddressTextField.text!) \(self.secondAddressTextField.text!)",
+                    "add1": self.splitAddress[0],
+                    "add2": self.splitAddress[1],
+                    "add3": self.splitAddress[2],
+                    "category": self.categoryPickerTextField.text!,
+                    "email": userEmail,
+                    "distance": 0,
+                    "phone1": self.phone1,
+                    "phone2": self.secondPhoneNumTextField.text!,
+                    "ownerComment": "",
+                    "storeName": self.storeNameTextField.text!,
+                    "storeNum": self.corporateRegistrationNumTextField.text!,
+                    "url": self.homepageTextField.text ?? "",
+                    "x": self.storeAddress.x,
+                    "y": self.storeAddress.y,
+                    "date": "0000-00-00",
+                    "covid19Count": 0,
+                    "covid19Aver": 0,
+                    "sanitationCount": 0,
+                    "sanitationAver": 0,
+                    "etcCount": 0,
+                    "etcAver": 0
+                ], merge: true)
+                //MARK: - 이미지 경로 겹쳐도 되는지 확인 요망
+//                if let userImage = self.storeImageView.image?.pngData() {
+//                    storage.reference(forURL: "gs://together-at001.appspot.com/\(storeNum).png").putData(userImage)
+//                }
             }
         }
-        self.navigationController?.popViewController(animated: true)
+
+        if let checkListVC = self.storyboard?.instantiateViewController(withIdentifier: "CheckList") as? CheckListViewController
+        {
+            checkListVC.whatData = 1 // once, "2 = daily"
+            checkListVC.edit = false // 새로 추가
+            checkListVC.category = categoryPickerTextField.text!
+            self.navigationController?.pushViewController(checkListVC, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        if edit == true {
+            setData()
+        }
         categoryPickerTextField.delegate = self
         categoryPickerTextField.text = storeCategories[0]
         firstPhoneNumPickerTextField.text = firstPhoneNums[0]
@@ -83,10 +109,6 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             self.checkTextField()
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,18 +125,20 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
         firstPhoneNumPickerTextField.addLeftPadding()
         secondPhoneNumTextField.addLeftPadding()
         corporateRegistrationNumTextField.addLeftPadding()
+        firstAddressTextField.addLeftPadding()
         secondAddressTextField.addLeftPadding()
         homepageTextField.addLeftPadding()
         
         categoryPickerTextField.addRightImage(image: #imageLiteral(resourceName: "icMoreView"))
         firstPhoneNumPickerTextField.addRightImage(image: #imageLiteral(resourceName: "icMoreView"))
+        firstAddressTextField.addRightImage(image: #imageLiteral(resourceName: "icArrowNext"))
         
         storeNameTextField.layer.borderWidth = 0.8
         categoryPickerTextField.layer.borderWidth = 0.8
         firstPhoneNumPickerTextField.layer.borderWidth = 0.8
         secondPhoneNumTextField.layer.borderWidth = 0.8
         corporateRegistrationNumTextField.layer.borderWidth = 0.8
-        firstAddressLabel.layer.borderWidth = 0.8
+        firstAddressTextField.layer.borderWidth = 0.8
         secondAddressTextField.layer.borderWidth = 0.8
         homepageTextField.layer.borderWidth = 0.8
         
@@ -123,30 +147,43 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
         firstPhoneNumPickerTextField.layer.borderColor = UIColor.veryLightPink.cgColor
         secondPhoneNumTextField.layer.borderColor = UIColor.veryLightPink.cgColor
         corporateRegistrationNumTextField.layer.borderColor = UIColor.veryLightPink.cgColor
-        firstAddressLabel.layer.borderColor = UIColor.veryLightPink.cgColor
+        firstAddressTextField.layer.borderColor = UIColor.veryLightPink.cgColor
         secondAddressTextField.layer.borderColor = UIColor.veryLightPink.cgColor
         homepageTextField.layer.borderColor = UIColor.veryLightPink.cgColor
         
-        userImageView.layer.cornerRadius = 19
+        storeImageView.layer.cornerRadius = 19
+//        firstAddressTextField.isEnabled = false
+    }
+    
+    func setData() {
+        guard let store = store else { return }
+        storeNameTextField.text = store.storeName
+        categoryPickerTextField.text = store.category
+        firstPhoneNumPickerTextField.text = store.phone1
+        secondPhoneNumTextField.text = store.phone2
+        corporateRegistrationNumTextField.text = store.storeNum
+        firstAddressTextField.text = store.roadAdd
+//        secondAddressTextField.text = store.roadAdd2
+        homepageTextField.text = store.url
     }
     
     func setGesture() {
         // ImageView
-        userImageView.isUserInteractionEnabled = true
+        storeImageView.isUserInteractionEnabled = true
         let imageGesture = UITapGestureRecognizer(target: self, action: #selector(tappedUIImageView))
-        userImageView.addGestureRecognizer(imageGesture)
-        // Label
-        firstAddressLabel.isUserInteractionEnabled = true
-        let labelGesture = UITapGestureRecognizer(target: self, action: #selector(tappedLabel(tapGestureRecognizer:)))
-        firstAddressLabel.addGestureRecognizer(labelGesture)
+        storeImageView.addGestureRecognizer(imageGesture)
+        // TextField
+        firstAddressTextField.isUserInteractionEnabled = true
+        let textFieldGesture = UITapGestureRecognizer(target: self, action: #selector(tappedAddrSearch(tapGestureRecognizer:)))
+        firstAddressTextField.addGestureRecognizer(textFieldGesture)
     }
     
     func createPickerView() {
         // pickerView
-        pickerView.delegate = self
-        categoryPickerTextField.inputView = pickerView
-        firstPhoneNumPickerTextField.inputView = pickerView
-        
+        categoryPickerView.delegate = self
+        phonePickerView.delegate = self
+        categoryPickerTextField.inputView = categoryPickerView
+        firstPhoneNumPickerTextField.inputView = phonePickerView
         // pickerView_Toolbar
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -158,10 +195,10 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
     }
     
     func checkTextField() {
-        okButton.isEnabled = false
+        nextButton.isEnabled = false
         storeNameTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
         categoryPickerTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
-        secondPhoneNumTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
+        firstAddressTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
         corporateRegistrationNumTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
         secondAddressTextField.addTarget(self, action: #selector(notEmptyTextField(_:)), for: .editingChanged)
     }
@@ -173,13 +210,13 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
             let category = categoryPickerTextField.text, !category.isEmpty,
             let secondPhone = secondPhoneNumTextField.text, !secondPhone.isEmpty,
             let register = corporateRegistrationNumTextField.text, !register.isEmpty,
-            let secondAddr = secondAddressTextField.text, !secondAddr.isEmpty
+            let firstAddr = firstAddressTextField.text, !firstAddr.isEmpty
         else {
-                self.okButton.isEnabled = false
-                self.okButton.backgroundColor = UIColor.veryLightPink
+                self.nextButton.isEnabled = false
+                self.nextButton.backgroundColor = UIColor.veryLightPink
                 return
         }
-        okButton.isEnabled = true
+        nextButton.isEnabled = true
     }
     
     @objc func tappedUIImageView() {
@@ -199,7 +236,7 @@ class AddStoreViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    @objc func tappedLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc func tappedAddrSearch(tapGestureRecognizer: UITapGestureRecognizer) {
         if let addressSearchVC = self.storyboard?.instantiateViewController(withIdentifier: "AddressSearch") as? AddressSearchViewController {
             addressSearchVC.delegate = self
             self.navigationController?.pushViewController(addressSearchVC, animated: true)
@@ -215,10 +252,10 @@ extension AddStoreViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        switch activeTextField {
-        case 1:
+        switch pickerView {
+        case categoryPickerView:
             return storeCategories.count
-        case 2:
+        case phonePickerView:
             return firstPhoneNums.count
         default:
             return 0
@@ -227,10 +264,10 @@ extension AddStoreViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        switch activeTextField {
-        case 1:
+        switch pickerView {
+        case categoryPickerView:
             return storeCategories[row]
-        case 2:
+        case phonePickerView:
             return firstPhoneNums[row]
         default:
             return nil
@@ -239,11 +276,11 @@ extension AddStoreViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        switch activeTextField {
-        case 1:
+        switch pickerView {
+        case categoryPickerView:
             categoryPickerTextField.text = storeCategories[row]
             break
-        case 2:
+        case phonePickerView:
             firstPhoneNumPickerTextField.text = firstPhoneNums[row]
             break
         default:
@@ -255,24 +292,23 @@ extension AddStoreViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
         switch textField {
         case categoryPickerTextField:
-            pickerView.selectRow(0, inComponent: 0, animated: true)
-            self.pickerView.delegate?.pickerView?(pickerView, didSelectRow: 0, inComponent: 0)
-            activeTextField = 1
+            categoryPickerView.selectRow(storeCategories.firstIndex(of: categoryPickerTextField.text!) ?? 0, inComponent: 0, animated: true)
+            categoryPickerView.reloadAllComponents()
         case firstPhoneNumPickerTextField:
-            pickerView.selectRow(0, inComponent: 0, animated: true)
-            self.pickerView.delegate?.pickerView?(pickerView, didSelectRow: 0, inComponent: 0)
-            activeTextField = 2
+            categoryPickerView.selectRow(firstPhoneNums.firstIndex(of: firstAddressTextField.text!) ?? 0, inComponent: 0, animated: true)
+            categoryPickerView.reloadAllComponents()
         default:
-            activeTextField = 0
+            return
           }
+        
     }
 }
 
 extension AddStoreViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    // MARK: - 정방형으로만 이미지 받기
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            userImageView.image = image
+            storeImageView.image = image
             print(info)
         }
         dismiss(animated: true, completion: nil)
@@ -281,11 +317,11 @@ extension AddStoreViewController: UIImagePickerControllerDelegate, UINavigationC
 
 extension AddStoreViewController: AddressSearchDelegate {
     
-    func receiveSeletedAddress(_ selectedAddress: Address?) {
+    func receiveSelectedAddress(_ selectedAddress: Address?) {
         if let roadAddr = selectedAddress?.roadAddr, let jibunAddr = selectedAddress?.jibunAddr, let x = selectedAddress?.x, let y = selectedAddress?.y {
-            self.firstAddressLabel.text = "    \(roadAddr)"
-            self.firstAddressLabel.textColor = .black
-            self.firstAddressLabel.font = UIFont.NotoSansKR(type: .regular, size: 15)
+            self.firstAddressTextField.text = roadAddr
+            self.firstAddressTextField.textColor = .black
+            self.firstAddressTextField.font = UIFont.NotoSansKR(type: .regular, size: 15)
             
             DispatchQueue.global().async {
                 self.storeAddress.roadAddr = roadAddr

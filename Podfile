@@ -10,9 +10,9 @@ target 'PostCoronaProject' do
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SDWebImage'
+  pod 'CSV.swift', '~> 2.4.3'
 
   pod 'Firebase/Auth'
-  pod 'GoogleSignIn'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'

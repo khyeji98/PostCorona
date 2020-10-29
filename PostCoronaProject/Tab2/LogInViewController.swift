@@ -11,7 +11,9 @@ import Firebase
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
 
-    //MARK: IBOutlets
+    var fromMypage = Bool()
+    
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
@@ -23,6 +25,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if fromMypage == true {
+            backButton.setImage(UIImage(named: "icArrowBack.png"), for: .normal)
+        } else {
+            backButton.setImage(UIImage(named: "icExit.png"), for: .normal)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,20 +50,30 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.isSecureTextEntry = true
     }
     
-    //MARK: IBAction
+    @IBAction func tappedBackButton(_ sender: UIButton) {
+        if self.fromMypage == true {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func tappedLogInButton(_ sender: UIButton) {
         
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { [weak self] user, error in
             if user != nil{
-
-                print("login success")
                 
-                guard let nextVC = self?.storyboard?.instantiateViewController(identifier: "StoreList") else { return }
-                
-                self?.present(nextVC, animated: true)
+                if self?.fromMypage == true {
                     
+                    self?.navigationController?.popViewController(animated: true)
+                } else {
+                    self?.presentingViewController?.dismiss(animated: true, completion: nil)
+                }
             }else{
-                print("login fail")
+                let alertController = UIAlertController(title: nil, message: "이메일 또는 비밀번호가 맞지 않습니다.", preferredStyle: .alert)
+                let yesPressed = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alertController.addAction(yesPressed)
+                self?.present(alertController, animated: true, completion: nil)
             }
         }
     }

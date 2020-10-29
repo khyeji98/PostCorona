@@ -76,8 +76,8 @@ class JoinViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         registerForKeyboardNotification()
         // setUI
         emailCheckButton.layer.cornerRadius = 4
@@ -89,17 +89,11 @@ class JoinViewController: UIViewController {
         DispatchQueue.main.async {
             self.checkState()
         }
-        
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
         removeRegisterForKeyboardNotification()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        
     }
     
     override func didReceiveMemoryWarning() {

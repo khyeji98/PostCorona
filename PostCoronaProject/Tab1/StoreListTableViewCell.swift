@@ -15,10 +15,13 @@ class StoreListTableViewCell: UITableViewCell {
     @IBOutlet weak var storeNameLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var storeAddressLabel: UILabel!
-    @IBOutlet weak var safeCountingLabel: UILabel!
-    @IBOutlet weak var checkListImageView: UIImageView!
-    
-    var email: String = ""
+    @IBOutlet weak var covidAverLabel: UILabel!
+    @IBOutlet weak var covidCountLabel: UILabel!
+    @IBOutlet weak var sanitationAverLabel: UILabel!
+    @IBOutlet weak var sanitationCountLabel: UILabel!
+    @IBOutlet weak var etcGradeLabel: UILabel!
+    @IBOutlet weak var etcCountLabel: UILabel!
+    @IBOutlet weak var todayCheckImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

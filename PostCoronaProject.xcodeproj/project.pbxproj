@@ -12,12 +12,11 @@
 		330E3AFA253CAE310039416B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 330E3AF9253CAE310039416B /* NotoSansKR-Light.otf */; };
 		3331258224DDD0DC00B36E8A /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */; };
 		3339C5A1253DB91700D1D21B /* DisinfectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5A0253DB91700D1D21B /* DisinfectionViewController.swift */; };
-		3339C5A6253DB97000D1D21B /* TasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5A5253DB97000D1D21B /* TasteViewController.swift */; };
-		3339C5AB253DBA5600D1D21B /* HygieneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5AA253DBA5600D1D21B /* HygieneViewController.swift */; };
-		335F225F2501DFA700DF1482 /* AdminStoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F225E2501DFA700DF1482 /* AdminStoreListTableViewCell.swift */; };
-		335F226125023B4800DF1482 /* EditStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F226025023B4800DF1482 /* EditStoreViewController.swift */; };
-		3360056F24F80D3000217DB0 /* TodayCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360056E24F80D3000217DB0 /* TodayCheckViewController.swift */; };
-		3360057124F8123D00217DB0 /* TodayCheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360057024F8123D00217DB0 /* TodayCheckTableViewCell.swift */; };
+		3339C5A6253DB97000D1D21B /* EtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5A5253DB97000D1D21B /* EtcViewController.swift */; };
+		3339C5AB253DBA5600D1D21B /* CleanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339C5AA253DBA5600D1D21B /* CleanViewController.swift */; };
+		335F225F2501DFA700DF1482 /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F225E2501DFA700DF1482 /* AdminTableViewCell.swift */; };
+		3360056F24F80D3000217DB0 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360056E24F80D3000217DB0 /* CheckListViewController.swift */; };
+		3360057124F8123D00217DB0 /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360057024F8123D00217DB0 /* CheckListTableViewCell.swift */; };
 		337E9C3124E1E35100475C48 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3024E1E35100475C48 /* SF-Pro.ttf */; };
 		337E9C3324E1E38F00475C48 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3224E1E38F00475C48 /* NotoSansKR-Bold.otf */; };
 		337E9C3524E1E39700475C48 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3424E1E39700475C48 /* NotoSansKR-Medium.otf */; };
@@ -26,6 +25,12 @@
 		337E9C3B24E2205D00475C48 /* StoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E9C3A24E2205D00475C48 /* StoreInfoViewController.swift */; };
 		337E9C3D24E235E600475C48 /* CustomCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337E9C3C24E235E600475C48 /* CustomCategoryView.xib */; };
 		337E9C3F24E2366800475C48 /* CustomCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E9C3E24E2366800475C48 /* CustomCategoryView.swift */; };
+		339B57602546DE1400365383 /* ReportListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B575F2546DE1400365383 /* ReportListViewController.swift */; };
+		339B57652546DE2400365383 /* ReportListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B57642546DE2400365383 /* ReportListTableViewCell.swift */; };
+		339B5773254702E600365383 /* OwnerCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B5772254702E600365383 /* OwnerCommentViewController.swift */; };
+		339EC2A625478B190044FC03 /* RegionFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EC2A525478B190044FC03 /* RegionFilterViewController.swift */; };
+		339EC2AE25478B830044FC03 /* FirstRegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EC2AD25478B830044FC03 /* FirstRegionTableViewCell.swift */; };
+		339EC2B325478B8F0044FC03 /* SecondRegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EC2B225478B8F0044FC03 /* SecondRegionTableViewCell.swift */; };
 		33A1D44624DD5D59006E62C4 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1D44524DD5D59006E62C4 /* StoreListViewController.swift */; };
 		33A96ED924D42F2700F7FCC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96ED824D42F2700F7FCC9 /* AppDelegate.swift */; };
 		33A96EDB24D42F2700F7FCC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96EDA24D42F2700F7FCC9 /* SceneDelegate.swift */; };
@@ -35,9 +40,9 @@
 		33A96EF024D42F2800F7FCC9 /* PostCoronaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96EEF24D42F2800F7FCC9 /* PostCoronaProjectTests.swift */; };
 		33A96EFB24D42F2900F7FCC9 /* PostCoronaProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A96EFA24D42F2900F7FCC9 /* PostCoronaProjectUITests.swift */; };
 		33B4E18124F4B630003D0497 /* AdminStoreViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B4E18024F4B630003D0497 /* AdminStoreViewController .swift */; };
-		33BAFFBA24EE62EC000F7F37 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BAFFB924EE62EC000F7F37 /* CheckListViewController.swift */; };
+		33BAFFBA24EE62EC000F7F37 /* DisinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BAFFB924EE62EC000F7F37 /* DisinListViewController.swift */; };
 		33BAFFBC24F1A38C000F7F37 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BAFFBB24F1A38C000F7F37 /* AddStoreViewController.swift */; };
-		33BC6D2524E0704A0031DE2A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC6D2424E0704A0031DE2A /* Store.swift */; };
+		33BC6D2524E0704A0031DE2A /* Store+MapGridData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC6D2424E0704A0031DE2A /* Store+MapGridData.swift */; };
 		33BC6D2A24E096C30031DE2A /* UIFont+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC6D2924E096C30031DE2A /* UIFont+UIColor.swift */; };
 		33C0742E24F9349A00716E64 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0742D24F9349A00716E64 /* SystemConfiguration.framework */; };
 		33C0743024F934B200716E64 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0742F24F934B200716E64 /* CoreLocation.framework */; };
@@ -49,6 +54,17 @@
 		33C0744024F976A900716E64 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0743324F934CB00716E64 /* libc++.tbd */; };
 		33C0744524F9791F00716E64 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C0744424F9791F00716E64 /* DaumMap.framework */; };
 		33C0744724F97A9D00716E64 /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */; };
+		33C4F96825423432000D0B67 /* DisinListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4F96725423432000D0B67 /* DisinListTableViewCell.swift */; };
+		33C4F99F2542F5C8000D0B67 /* IsUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4F99E2542F5C8000D0B67 /* IsUserView.swift */; };
+		33C4F9A52542F5E4000D0B67 /* IsNotUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4F9A42542F5E4000D0B67 /* IsNotUserView.swift */; };
+		33C4F9AD2542F5F1000D0B67 /* IsUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C4F9AC2542F5F1000D0B67 /* IsUserView.xib */; };
+		33C4F9B22542F5FE000D0B67 /* IsNotUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C4F9B12542F5FE000D0B67 /* IsNotUserView.xib */; };
+		33C4F9C3254333A6000D0B67 /* MyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4F9C2254333A6000D0B67 /* MyStoreViewController.swift */; };
+		33C4F9CE25444528000D0B67 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4F9CD25444528000D0B67 /* ReportViewController.swift */; };
+		33C4F9D625444537000D0B67 /* EvaluateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4F9D525444537000D0B67 /* EvaluateViewController.swift */; };
+		33C9BC2425457E7800D9EB17 /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9BC2325457E7800D9EB17 /* PushViewController.swift */; };
+		33C9BC912545FA5100D9EB17 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9BC8F2545FA5100D9EB17 /* CommentTableViewCell.swift */; };
+		33C9BC922545FA5100D9EB17 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C9BC902545FA5100D9EB17 /* CommentTableViewCell.xib */; };
 		33CDE99A253F15E7006741CB /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CDE999253F15E7006741CB /* JoinViewController.swift */; };
 		33CDE9A9253F22A9006741CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33CDE9A8253F22A9006741CB /* GoogleService-Info.plist */; };
 		33D6403E24D9F4F900C7750F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6403D24D9F4F900C7750F /* LogInViewController.swift */; };
@@ -81,12 +97,11 @@
 		330E3AF9253CAE310039416B /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		3339C5A0253DB91700D1D21B /* DisinfectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisinfectionViewController.swift; sourceTree = "<group>"; };
-		3339C5A5253DB97000D1D21B /* TasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteViewController.swift; sourceTree = "<group>"; };
-		3339C5AA253DBA5600D1D21B /* HygieneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HygieneViewController.swift; sourceTree = "<group>"; };
-		335F225E2501DFA700DF1482 /* AdminStoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminStoreListTableViewCell.swift; sourceTree = "<group>"; };
-		335F226025023B4800DF1482 /* EditStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStoreViewController.swift; sourceTree = "<group>"; };
-		3360056E24F80D3000217DB0 /* TodayCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckViewController.swift; sourceTree = "<group>"; };
-		3360057024F8123D00217DB0 /* TodayCheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCheckTableViewCell.swift; sourceTree = "<group>"; };
+		3339C5A5253DB97000D1D21B /* EtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcViewController.swift; sourceTree = "<group>"; };
+		3339C5AA253DBA5600D1D21B /* CleanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanViewController.swift; sourceTree = "<group>"; };
+		335F225E2501DFA700DF1482 /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
+		3360056E24F80D3000217DB0 /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
+		3360057024F8123D00217DB0 /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
 		337E9C3024E1E35100475C48 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		337E9C3224E1E38F00475C48 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		337E9C3424E1E39700475C48 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
@@ -95,6 +110,12 @@
 		337E9C3A24E2205D00475C48 /* StoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoViewController.swift; sourceTree = "<group>"; };
 		337E9C3C24E235E600475C48 /* CustomCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCategoryView.xib; sourceTree = "<group>"; };
 		337E9C3E24E2366800475C48 /* CustomCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryView.swift; sourceTree = "<group>"; };
+		339B575F2546DE1400365383 /* ReportListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListViewController.swift; sourceTree = "<group>"; };
+		339B57642546DE2400365383 /* ReportListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListTableViewCell.swift; sourceTree = "<group>"; };
+		339B5772254702E600365383 /* OwnerCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCommentViewController.swift; sourceTree = "<group>"; };
+		339EC2A525478B190044FC03 /* RegionFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionFilterViewController.swift; sourceTree = "<group>"; };
+		339EC2AD25478B830044FC03 /* FirstRegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegionTableViewCell.swift; sourceTree = "<group>"; };
+		339EC2B225478B8F0044FC03 /* SecondRegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegionTableViewCell.swift; sourceTree = "<group>"; };
 		33A1D44524DD5D59006E62C4 /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
 		33A96ED524D42F2700F7FCC9 /* PostCoronaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostCoronaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A96ED824D42F2700F7FCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,9 +131,9 @@
 		33A96EFA24D42F2900F7FCC9 /* PostCoronaProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoronaProjectUITests.swift; sourceTree = "<group>"; };
 		33A96EFC24D42F2900F7FCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33B4E18024F4B630003D0497 /* AdminStoreViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdminStoreViewController .swift"; sourceTree = "<group>"; };
-		33BAFFB924EE62EC000F7F37 /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
+		33BAFFB924EE62EC000F7F37 /* DisinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisinListViewController.swift; sourceTree = "<group>"; };
 		33BAFFBB24F1A38C000F7F37 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
-		33BC6D2424E0704A0031DE2A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		33BC6D2424E0704A0031DE2A /* Store+MapGridData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+MapGridData.swift"; sourceTree = "<group>"; };
 		33BC6D2924E096C30031DE2A /* UIFont+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+UIColor.swift"; sourceTree = "<group>"; };
 		33C0742B24F9347E00716E64 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		33C0742D24F9349A00716E64 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -122,10 +143,21 @@
 		33C0743424F934D700716E64 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		33C0743524F934E300716E64 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		33C0743924F94CB600716E64 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
-		33C0743B24F9744B00716E64 /* KakaoMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		33C0743C24F9760B00716E64 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		33C0744424F9791F00716E64 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
+		33C4F96725423432000D0B67 /* DisinListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisinListTableViewCell.swift; sourceTree = "<group>"; };
+		33C4F99E2542F5C8000D0B67 /* IsUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsUserView.swift; sourceTree = "<group>"; };
+		33C4F9A42542F5E4000D0B67 /* IsNotUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsNotUserView.swift; sourceTree = "<group>"; };
+		33C4F9AC2542F5F1000D0B67 /* IsUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IsUserView.xib; sourceTree = "<group>"; };
+		33C4F9B12542F5FE000D0B67 /* IsNotUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IsNotUserView.xib; sourceTree = "<group>"; };
+		33C4F9C2254333A6000D0B67 /* MyStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoreViewController.swift; sourceTree = "<group>"; };
+		33C4F9CD25444528000D0B67 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		33C4F9D525444537000D0B67 /* EvaluateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluateViewController.swift; sourceTree = "<group>"; };
+		33C9BC2325457E7800D9EB17 /* PushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
+		33C9BC3E25457F5F00D9EB17 /* PostCoronaProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PostCoronaProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		33C9BC8F2545FA5100D9EB17 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		33C9BC902545FA5100D9EB17 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		33CDE999253F15E7006741CB /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		33CDE9A8253F22A9006741CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		33D6403D24D9F4F900C7750F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -178,9 +210,13 @@
 		3339C5AF253DBA6500D1D21B /* ButtonBarPagerTabStripVCs */ = {
 			isa = PBXGroup;
 			children = (
-				3339C5A0253DB91700D1D21B /* DisinfectionViewController.swift */,
-				3339C5A5253DB97000D1D21B /* TasteViewController.swift */,
-				3339C5AA253DBA5600D1D21B /* HygieneViewController.swift */,
+				33C9BC902545FA5100D9EB17 /* CommentTableViewCell.xib */,
+				33C9BC8F2545FA5100D9EB17 /* CommentTableViewCell.swift */,
+				33C9BBD72544E68D00D9EB17 /* Disinfection */,
+				33C9BBD92544E6C900D9EB17 /* Clean */,
+				33C9BBD82544E6A100D9EB17 /* Etc */,
+				339B5772254702E600365383 /* OwnerCommentViewController.swift */,
+				33C4F9D525444537000D0B67 /* EvaluateViewController.swift */,
 			);
 			path = ButtonBarPagerTabStripVCs;
 			sourceTree = "<group>";
@@ -210,7 +246,7 @@
 		337E9C4124E2367D00475C48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				33BC6D2424E0704A0031DE2A /* Store.swift */,
+				33BC6D2424E0704A0031DE2A /* Store+MapGridData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,7 +254,7 @@
 		33A96ECC24D42F2700F7FCC9 = {
 			isa = PBXGroup;
 			children = (
-				33C0743B24F9744B00716E64 /* KakaoMap-Bridging-Header.h */,
+				33C9BC3E25457F5F00D9EB17 /* PostCoronaProject-Bridging-Header.h */,
 				33A96ED724D42F2700F7FCC9 /* PostCoronaProject */,
 				33A96EEE24D42F2800F7FCC9 /* PostCoronaProjectTests */,
 				33A96EF924D42F2900F7FCC9 /* PostCoronaProjectUITests */,
@@ -246,6 +282,7 @@
 				33A96EDA24D42F2700F7FCC9 /* SceneDelegate.swift */,
 				337E9C2724E1E10800475C48 /* Shared */,
 				33BC6D2624E096390031DE2A /* Extensions */,
+				337E9C4124E2367D00475C48 /* Model */,
 				33D6404324D9FA3400C7750F /* Tab1 */,
 				33D6404524D9FA5400C7750F /* Tab2 */,
 				33A96EDE24D42F2700F7FCC9 /* Main.storyboard */,
@@ -283,17 +320,57 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		33C4F99D2542F5A4000D0B67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33C4F9AC2542F5F1000D0B67 /* IsUserView.xib */,
+				33C4F99E2542F5C8000D0B67 /* IsUserView.swift */,
+				33C4F9B12542F5FE000D0B67 /* IsNotUserView.xib */,
+				33C4F9A42542F5E4000D0B67 /* IsNotUserView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33C9BBD72544E68D00D9EB17 /* Disinfection */ = {
+			isa = PBXGroup;
+			children = (
+				3339C5A0253DB91700D1D21B /* DisinfectionViewController.swift */,
+				33C4F96725423432000D0B67 /* DisinListTableViewCell.swift */,
+				33BAFFB924EE62EC000F7F37 /* DisinListViewController.swift */,
+				33C4F9CD25444528000D0B67 /* ReportViewController.swift */,
+			);
+			path = Disinfection;
+			sourceTree = "<group>";
+		};
+		33C9BBD82544E6A100D9EB17 /* Etc */ = {
+			isa = PBXGroup;
+			children = (
+				3339C5A5253DB97000D1D21B /* EtcViewController.swift */,
+			);
+			path = Etc;
+			sourceTree = "<group>";
+		};
+		33C9BBD92544E6C900D9EB17 /* Clean */ = {
+			isa = PBXGroup;
+			children = (
+				3339C5AA253DBA5600D1D21B /* CleanViewController.swift */,
+			);
+			path = Clean;
+			sourceTree = "<group>";
+		};
 		33CDE9A4253F1C72006741CB /* AdminStores */ = {
 			isa = PBXGroup;
 			children = (
-				335F225E2501DFA700DF1482 /* AdminStoreListTableViewCell.swift */,
+				335F225E2501DFA700DF1482 /* AdminTableViewCell.swift */,
 				33B4E18024F4B630003D0497 /* AdminStoreViewController .swift */,
+				33C4F9C2254333A6000D0B67 /* MyStoreViewController.swift */,
 				33BAFFBB24F1A38C000F7F37 /* AddStoreViewController.swift */,
-				335F226025023B4800DF1482 /* EditStoreViewController.swift */,
 				33C0743924F94CB600716E64 /* ResultCell.swift */,
 				33C0744624F97A9D00716E64 /* AddressSearchViewController.swift */,
-				3360057024F8123D00217DB0 /* TodayCheckTableViewCell.swift */,
-				3360056E24F80D3000217DB0 /* TodayCheckViewController.swift */,
+				3360057024F8123D00217DB0 /* CheckListTableViewCell.swift */,
+				3360056E24F80D3000217DB0 /* CheckListViewController.swift */,
+				339B57642546DE2400365383 /* ReportListTableViewCell.swift */,
+				339B575F2546DE1400365383 /* ReportListViewController.swift */,
 			);
 			path = AdminStores;
 			sourceTree = "<group>";
@@ -301,13 +378,14 @@
 		33D6404324D9FA3400C7750F /* Tab1 */ = {
 			isa = PBXGroup;
 			children = (
-				337E9C4124E2367D00475C48 /* Model */,
 				337E9C4024E2366C00475C48 /* View */,
 				3331258124DDD0DC00B36E8A /* StoreListTableViewCell.swift */,
 				33A1D44524DD5D59006E62C4 /* StoreListViewController.swift */,
+				339EC2AD25478B830044FC03 /* FirstRegionTableViewCell.swift */,
+				339EC2B225478B8F0044FC03 /* SecondRegionTableViewCell.swift */,
+				339EC2A525478B190044FC03 /* RegionFilterViewController.swift */,
 				337E9C3A24E2205D00475C48 /* StoreInfoViewController.swift */,
 				3339C5AF253DBA6500D1D21B /* ButtonBarPagerTabStripVCs */,
-				33BAFFB924EE62EC000F7F37 /* CheckListViewController.swift */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -315,10 +393,12 @@
 		33D6404524D9FA5400C7750F /* Tab2 */ = {
 			isa = PBXGroup;
 			children = (
+				33C4F99D2542F5A4000D0B67 /* View */,
 				33EBC2FF24D7F8A80089EF45 /* MyPageViewController.swift */,
 				33D6403D24D9F4F900C7750F /* LogInViewController.swift */,
 				33CDE999253F15E7006741CB /* JoinViewController.swift */,
 				33CDE9A4253F1C72006741CB /* AdminStores */,
+				33C9BC2325457E7800D9EB17 /* PushViewController.swift */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -366,8 +446,7 @@
 				33A96ED124D42F2700F7FCC9 /* Sources */,
 				33A96ED224D42F2700F7FCC9 /* Frameworks */,
 				33A96ED324D42F2700F7FCC9 /* Resources */,
-				E89670303241F3A10C874175 /* [CP] Embed Pods Frameworks */,
-				EAF06BD13DC0368C6B3DA7A8 /* [CP] Copy Pods Resources */,
+				3EF1397966FD292976C76AA9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,8 +484,7 @@
 				33A96EF224D42F2900F7FCC9 /* Sources */,
 				33A96EF324D42F2900F7FCC9 /* Frameworks */,
 				33A96EF424D42F2900F7FCC9 /* Resources */,
-				FB1B4076DCCE54126EF860E5 /* [CP] Embed Pods Frameworks */,
-				D45E78C520D33FB5CD402C8A /* [CP] Copy Pods Resources */,
+				AFF42235FE93E0F6C8FE1241 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -471,12 +549,15 @@
 				33A96EE224D42F2800F7FCC9 /* Assets.xcassets in Resources */,
 				337E9C3924E1E70700475C48 /* AppleSDGothicNeo.ttc in Resources */,
 				33A96EE024D42F2700F7FCC9 /* Main.storyboard in Resources */,
+				33C4F9AD2542F5F1000D0B67 /* IsUserView.xib in Resources */,
 				330E3AFA253CAE310039416B /* NotoSansKR-Light.otf in Resources */,
 				337E9C3324E1E38F00475C48 /* NotoSansKR-Bold.otf in Resources */,
+				33C4F9B22542F5FE000D0B67 /* IsNotUserView.xib in Resources */,
 				337E9C3724E1E3BA00475C48 /* NotoSansKR-Regular.otf in Resources */,
 				33CDE9A9253F22A9006741CB /* GoogleService-Info.plist in Resources */,
 				337E9C3124E1E35100475C48 /* SF-Pro.ttf in Resources */,
 				337E9C3D24E235E600475C48 /* CustomCategoryView.xib in Resources */,
+				33C9BC922545FA5100D9EB17 /* CommentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +578,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3EF1397966FD292976C76AA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4D1E0704409795A58C4771DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -541,55 +639,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D45E78C520D33FB5CD402C8A /* [CP] Copy Pods Resources */ = {
+		AFF42235FE93E0F6C8FE1241 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E89670303241F3A10C874175 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EAF06BD13DC0368C6B3DA7A8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject/Pods-PostCoronaProject-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9474064C2421B368428A36A /* [CP] Check Pods Manifest.lock */ = {
@@ -614,23 +678,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB1B4076DCCE54126EF860E5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostCoronaProject-PostCoronaProjectUITests/Pods-PostCoronaProject-PostCoronaProjectUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -638,6 +685,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C4F96825423432000D0B67 /* DisinListTableViewCell.swift in Sources */,
+				33C4F9CE25444528000D0B67 /* ReportViewController.swift in Sources */,
+				339EC2B325478B8F0044FC03 /* SecondRegionTableViewCell.swift in Sources */,
 				337E9C3B24E2205D00475C48 /* StoreInfoViewController.swift in Sources */,
 				33EBC30024D7F8A80089EF45 /* MyPageViewController.swift in Sources */,
 				33BC6D2A24E096C30031DE2A /* UIFont+UIColor.swift in Sources */,
@@ -646,21 +696,31 @@
 				33C0743A24F94CB600716E64 /* ResultCell.swift in Sources */,
 				33C0744724F97A9D00716E64 /* AddressSearchViewController.swift in Sources */,
 				33D6403E24D9F4F900C7750F /* LogInViewController.swift in Sources */,
-				335F226125023B4800DF1482 /* EditStoreViewController.swift in Sources */,
-				33BC6D2524E0704A0031DE2A /* Store.swift in Sources */,
+				33BC6D2524E0704A0031DE2A /* Store+MapGridData.swift in Sources */,
 				33CDE99A253F15E7006741CB /* JoinViewController.swift in Sources */,
+				339B57652546DE2400365383 /* ReportListTableViewCell.swift in Sources */,
 				33A96ED924D42F2700F7FCC9 /* AppDelegate.swift in Sources */,
-				335F225F2501DFA700DF1482 /* AdminStoreListTableViewCell.swift in Sources */,
-				3339C5A6253DB97000D1D21B /* TasteViewController.swift in Sources */,
+				33C4F9D625444537000D0B67 /* EvaluateViewController.swift in Sources */,
+				339EC2AE25478B830044FC03 /* FirstRegionTableViewCell.swift in Sources */,
+				339B57602546DE1400365383 /* ReportListViewController.swift in Sources */,
+				335F225F2501DFA700DF1482 /* AdminTableViewCell.swift in Sources */,
+				3339C5A6253DB97000D1D21B /* EtcViewController.swift in Sources */,
 				337E9C3F24E2366800475C48 /* CustomCategoryView.swift in Sources */,
+				33C4F9A52542F5E4000D0B67 /* IsNotUserView.swift in Sources */,
 				3331258224DDD0DC00B36E8A /* StoreListTableViewCell.swift in Sources */,
+				33C9BC2425457E7800D9EB17 /* PushViewController.swift in Sources */,
 				3339C5A1253DB91700D1D21B /* DisinfectionViewController.swift in Sources */,
+				33C9BC912545FA5100D9EB17 /* CommentTableViewCell.swift in Sources */,
 				33B4E18124F4B630003D0497 /* AdminStoreViewController .swift in Sources */,
-				3360056F24F80D3000217DB0 /* TodayCheckViewController.swift in Sources */,
-				3339C5AB253DBA5600D1D21B /* HygieneViewController.swift in Sources */,
+				33C4F9C3254333A6000D0B67 /* MyStoreViewController.swift in Sources */,
+				3360056F24F80D3000217DB0 /* CheckListViewController.swift in Sources */,
+				339B5773254702E600365383 /* OwnerCommentViewController.swift in Sources */,
+				3339C5AB253DBA5600D1D21B /* CleanViewController.swift in Sources */,
+				33C4F99F2542F5C8000D0B67 /* IsUserView.swift in Sources */,
 				33BAFFBC24F1A38C000F7F37 /* AddStoreViewController.swift in Sources */,
-				33BAFFBA24EE62EC000F7F37 /* CheckListViewController.swift in Sources */,
-				3360057124F8123D00217DB0 /* TodayCheckTableViewCell.swift in Sources */,
+				33BAFFBA24EE62EC000F7F37 /* DisinListViewController.swift in Sources */,
+				3360057124F8123D00217DB0 /* CheckListTableViewCell.swift in Sources */,
+				339EC2A625478B190044FC03 /* RegionFilterViewController.swift in Sources */,
 				33A96EDB24D42F2700F7FCC9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -837,7 +897,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = PostCoronaProject/PostCoronaProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DH9CS7PA5D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -923,7 +985,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.hyeji.PostCoronaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimhyeji/Desktop/PostCorona/KakaoMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimhyeji/Desktop/PostCorona/PostCoronaProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -936,7 +998,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = PostCoronaProject/PostCoronaProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DH9CS7PA5D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1022,7 +1086,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.hyeji.PostCoronaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimhyeji/Desktop/PostCorona/KakaoMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kimhyeji/Desktop/PostCorona/PostCoronaProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

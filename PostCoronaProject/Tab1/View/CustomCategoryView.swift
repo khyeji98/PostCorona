@@ -8,22 +8,23 @@
 
 import UIKit
 import FFPopup
-import Firebase
 
-extension UIView {
-    func loadView(nibName: String) -> UIView? {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first as? UIView
-    }
+//extension UIView {
+//    func loadView(nibName: String) -> UIView? {
+//        let bundle = Bundle(for: type(of: self))
+//        let nib = UINib(nibName: nibName, bundle: bundle)
+//        return nib.instantiate(withOwner: self, options: nil).first as? UIView
+//    }
+//
+//    var mainView: UIView? {
+//        return subviews.first
+//    }
+//}
+
+class CustomCategoryView: XibView {
+
+//    var popup = FFPopup()
     
-    var mainView: UIView? {
-        return subviews.first
-    }
-}
-
-class CustomCategoryView: UIView {
-
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var totalButton: UIButton!
@@ -33,24 +34,19 @@ class CustomCategoryView: UIView {
     @IBOutlet weak var pcButton: UIButton!
     @IBOutlet weak var singButton: UIButton!
     
-    var popup : FFPopup?
     
-      override init(frame: CGRect) {
-          super.init(frame: frame)
-          setup()
-      }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUp()
+    }
       
-      required init(coder aDecoder: NSCoder) {
-          super.init(coder: aDecoder)!
-          setup()
-      }
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        setUp()
+    }
     
-      private func setup() {
+    private func setUp() {
         backgroundColor = .white
-          
-        guard let view = loadView(nibName: "CustomCategoryView") else { return }
-        view.frame = self.bounds
-        self.addSubview(view)
         
         totalButton.tag = 0
         foodButton.tag = 1
@@ -58,5 +54,5 @@ class CustomCategoryView: UIView {
         barButton.tag = 3
         pcButton.tag = 4
         singButton.tag = 5
-      }
+    }
 }

@@ -93,7 +93,7 @@ class AddressSearchViewController: UIViewController, ResultCellDelegate {
     func didSelectAddress(_ sender: UIButton) {
         let buttonRow = sender.tag
         let tagAddress = resultList[buttonRow]
-        delegate?.receiveSeletedAddress(tagAddress.self)
+        delegate?.receiveSelectedAddress(tagAddress.self)
 
         self.navigationController?.popViewController(animated: true)
     }
