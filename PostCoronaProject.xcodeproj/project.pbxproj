@@ -251,6 +251,34 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		33897FBE2582778E009FBF89 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				33A96EDE24D42F2700F7FCC9 /* Main.storyboard */,
+				33A96EE324D42F2800F7FCC9 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		33897FBF258277AA009FBF89 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		33897FC0258277C0009FBF89 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				33CDE9A8253F22A9006741CB /* GoogleService-Info.plist */,
+				33A96ED824D42F2700F7FCC9 /* AppDelegate.swift */,
+				33A96EDA24D42F2700F7FCC9 /* SceneDelegate.swift */,
+				33A96EE124D42F2800F7FCC9 /* Assets.xcassets */,
+				33A96EE624D42F2800F7FCC9 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		33A96ECC24D42F2700F7FCC9 = {
 			isa = PBXGroup;
 			children = (
@@ -277,18 +305,14 @@
 		33A96ED724D42F2700F7FCC9 /* PostCoronaProject */ = {
 			isa = PBXGroup;
 			children = (
-				33CDE9A8253F22A9006741CB /* GoogleService-Info.plist */,
-				33A96ED824D42F2700F7FCC9 /* AppDelegate.swift */,
-				33A96EDA24D42F2700F7FCC9 /* SceneDelegate.swift */,
+				33897FC0258277C0009FBF89 /* SupportingFiles */,
 				337E9C2724E1E10800475C48 /* Shared */,
 				33BC6D2624E096390031DE2A /* Extensions */,
 				337E9C4124E2367D00475C48 /* Model */,
+				33897FBF258277AA009FBF89 /* ViewControllers */,
 				33D6404324D9FA3400C7750F /* Tab1 */,
 				33D6404524D9FA5400C7750F /* Tab2 */,
-				33A96EDE24D42F2700F7FCC9 /* Main.storyboard */,
-				33A96EE124D42F2800F7FCC9 /* Assets.xcassets */,
-				33A96EE324D42F2800F7FCC9 /* LaunchScreen.storyboard */,
-				33A96EE624D42F2800F7FCC9 /* Info.plist */,
+				33897FBE2582778E009FBF89 /* Storyboards */,
 			);
 			path = PostCoronaProject;
 			sourceTree = "<group>";
