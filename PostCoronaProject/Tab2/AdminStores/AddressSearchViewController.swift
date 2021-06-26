@@ -64,11 +64,6 @@ class AddressSearchViewController: UIViewController, ResultCellDelegate {
             Alamofire.request("https://dapi.kakao.com/v2/local/search/keyword.json", method: .get, parameters: parameters, headers: headers).responseJSON(completionHandler: { response in
                 switch response.result {
                 case .success(let value):
-                    print(response.result)
-                    print("pageable_count : \(JSON(value)["meta"]["pageable_count"])")
-                    print("is_end : \(JSON(value)["meta"]["is_end"])")
-                    print("documents : \(JSON(value)["documents"])")
-                
                     if let addressList = JSON(value)["documents"].array {
                         for item in addressList {
                             let jibunAddress = item["address_name"].string ?? ""

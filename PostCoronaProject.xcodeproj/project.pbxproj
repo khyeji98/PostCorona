@@ -260,13 +260,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		33897FBF258277AA009FBF89 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 		33897FC0258277C0009FBF89 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,7 +302,6 @@
 				337E9C2724E1E10800475C48 /* Shared */,
 				33BC6D2624E096390031DE2A /* Extensions */,
 				337E9C4124E2367D00475C48 /* Model */,
-				33897FBF258277AA009FBF89 /* ViewControllers */,
 				33D6404324D9FA3400C7750F /* Tab1 */,
 				33D6404524D9FA5400C7750F /* Tab2 */,
 				33897FBE2582778E009FBF89 /* Storyboards */,

@@ -54,16 +54,10 @@ class CheckListViewController: UIViewController {
                     self.db.collection("store").document(self.storeNum).collection("covid19").document("check").setData(["daily":self.resultArray], merge: true)
                     self.db.collection("store").document(self.storeNum).setData(["date": todayDate], merge: true)
                 }
-                self.navigationController?.popViewController(animated: true)
-            } else {
-                self.navigationController?.popViewController(animated: true)
             }
         } else {
             if listArray.count == resultArray.count {
                 db.collection("store").document(storeNum).collection("covid19").document("check").setData(["once":resultArray], merge: true)
-                self.navigationController?.popViewController(animated: true)
-            } else {
-                self.navigationController?.popViewController(animated: true)
             }
         }
         self.navigationController?.popViewController(animated: true)
